@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Геометрия{% endblock %}
+
+{% block content %}
+    <br>
+    <h1 style="text-align: center;">Геометрия</h1>
+    <hr>
+    <div class="btn-group" role="group" aria-label="Default button group" style="position: relative; left: 10px; top: -20px;">
+      <a type="button" class="btn btn-primary" href="{% url 'geopoly' %}">Геометрия</a>
+      <a type="button" class="btn btn-outline-primary" href="{% url 'alpoly' %}">Алгебра</a>
+    </div>
+    <a href="{% url '10' %}" type="button" class="btn btn-outline-primary" style="position: relative; left: 20px; top: -20px">Пәндер</a>
+    <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group" style="position: relative; left: 1120px;">
+      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="vbtn-radio1">Тегін (4)</label>
+      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="vbtn-radio2">Ақылы (28)</label>
+    </div>
+<div class="polygons2"><a class="btn" href="{% url 'geopoly' %}" style="width: 340px; height: 70px; position: relative; left: 10px; top: -10px; border: 2px solid #cfcfcf; border-radius: 10px 10px 10px 10px; background-color: #f0f0f0; text-align: left;font-size:30px;">көпбұрыштар<img src="{% static 'main/img/arrow.png' %}" alt="Arrow" style="width: 40px; position: relative; left: 80px;"></a></div>
+{% endblock %}

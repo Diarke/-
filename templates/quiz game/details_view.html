@@ -1,0 +1,23 @@
+{% extends 'empty.html' %}
+{% load static %}
+
+{% block title %}Форма по добавлению квиз{% endblock %}
+
+{% block content %}
+<div style="position: relative; background: #f2f2f2; width: 1750px; height: 900px; top: 30px; left: 90px; border-radius: 30px 30px 30px 30px;"></div>
+<div class="features" style="position: absolute; top: 50px; left: 130px;">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url '1' %}">Басты бет</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'quiz' %}">Квиз ойындары</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ quizgame.title }}</li>
+      </ol>
+    </nav>
+    <h1>{{ quizgame.title }}</h1><br>
+    <iframe src="{{ object.url }}" width="1400" height="700" frameborder="0" allowfullscreen style="position: relative; left: -10px; border-radius: 30px 30px 30px 30px;"></iframe>
+    {% if user.username == "Porchamp"%}
+        <a href="{% url 'quiz-delete' quizgame.id %}" class="btn btn-danger" style="position: relative; top: 30px; left: -1400px;">Удалить</a>
+        <a href="{% url 'quiz-update' quizgame.id %}" class="btn btn-info" style="position: relative; top: 30px; left: -1400px;">Редактировать</a>
+    {% endif %}
+</div>
+{% endblock %}

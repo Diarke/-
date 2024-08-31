@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Квиз ойындары{% endblock %}
+
+{% block content %}
+<div style="position: absolute;">
+    <div class="row row-cols-1 row-cols-md-6 g-1">
+        {% if user.username == "Porchamp"%}
+            <a href="{% url 'create' %}" style="position: absolute; left: 90px; top: 96px; list-style: none;"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить квиз</button></li></a>
+        {% endif %}
+        {% for el in quizs %}
+            <div class="card border-dark mb-3" style="max-width: 20rem; float: left; clear: both; margin: 20px 1%; top: 150px; left: 70px;">
+                <div class="card-header">Mathem</div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ el.title }}</h5>
+                        <p class="card-text">Миыңа демалыс бер</p>
+                        <a href="{% url 'quiz-detail' el.id %}" class="btn btn-primary">Ойнау</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

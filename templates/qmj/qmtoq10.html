@@ -1,0 +1,432 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}10 - сынып{% endblock %}
+
+{% block content %}
+<style>
+    .mainmenu1 {
+        position: relative;
+        height: 70px;
+        width: 1450px;
+        background: #ffffff;
+        -moz-box-shadow: 0 0 2px #1226de;
+        -webkit-box-shadow: 0 0 2px #1226de;
+        box-shadow: 0 0 2px #1226de;
+        border-radius: 10px 10px 10px 10px;
+    }
+</style>
+<div style="position: relative; width: 1500px; height: 150px; top: 140px; left: 225px; background-color: #1226de; border-radius: 20px 20px 20px 20px;">
+    <h1 style="position: absolute; top: 20px; left: 700px; color: #ffffff;">10 - сынып</h1>
+    <div class="dropdown" style="position: relative; top: 50px; left: 20px; list-style: none;">
+        <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
+        <div class="dropdown-content">
+            <a href="{% url 'qmtoq10' %}"><li>Алгебра</li></a>
+        </div>
+    </div>
+    <div style="position: relative; width: 140px; height: 35px; background-color: #ffffff; top: 7px; left: 190px; border-radius: 10px 10px 10px 10px;">
+        <p style="position: relative; top: 2px; left: 30px; font-size: 20px; color: blue">Алгебра</p>
+    </div>
+    <div style="position: relative; width: 80px; height: 35px; background-color: #ffffff; top: -28px; left: 390px; border-radius: 10px 10px 10px 10px;">
+        <p style="position: relative; top: 2px; left: 15px; font-size: 20px; color: blue; text-decoration: none;">ҚМЖ</p>
+    </div>
+</div>
+{% if user.subscribe_date|date:"Y-m-d" >= user.last_login|date:"Y-m-d" %}
+<div style="position: relative; top: 170px; left: 225px; height: 2670px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
+    <p style="position: relative; top: 20px; left: 50px; font-size: 20px;">Барлық материал ашық</p>
+    <div style="position: relative; top: 20px; left: 50px; height: 2531px; width: 1400px; background: #fff; border: 2px solid black;">
+        <div style="position: relative; font-size: 24px; left: 20px; top: 10px;">
+            <div style="position: absolute; height: 64px; width: 0px; left: 50px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 380px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 900px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 1100px; top: -11px; border: 1px solid black;"></div>
+            <p>№</p>
+            <p style="position: absolute; left: 120px; top: 0px;">Сабақ тақырыбы</p>
+            <p style="position: absolute; left: 560px; top: 0px;">Оқу мақсаттары</p>
+            <p style="position: absolute; left: 940px; top: 0px;">Сағат саны</p>
+            <p style="position: absolute; left: 1200px; top: 0px;">Скачать</p>
+        </div>
+        <div>
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 10px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 10px; font-size: 42px;">1 тоқсан</p>
+                <p style="position: relative; top: 10px; font-size: 24px;">Функция, оның қасиеттері және графигі</p>
+            </div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 70px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 400px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 920px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 1120px; top: 210px; border: 1px solid black;"></div>
+            <!--1-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">1</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функция және оның берілу</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">тәсілдері. Функциялардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">графиктерін түрлендіру</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.1 - функция анықтамасын және</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">берілу тәсілдерін білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/1-6 сабак 10.4.1.1-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--2-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 6px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">2</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функция және оның берілу</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">тәсілдері. Функциялардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">графиктерін түрлендіру</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.2 - функция графигіне түрлендірулер</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">орындай алу (параллель көшіру, сығу және</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">созу)</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/1-6 сабак 10.4.1.1-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--3-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">3</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функцияның қасиеттері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.3 функция қасиеттерін анықтай алу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/7-10 сабак 10.4.1.4.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--4-->
+            <div style="position: relative; height: 465px; width: 1400px; left: -2px; top: 2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">4</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функцияның қасиеттері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.4 - функцияның берілген графигі</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">бойынша оның қасиеттерін:</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">1) функцияның анықталу облысы;</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">2) функцияның мәндер жиыны;</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">3) функцияның нөлдері;</p>
+                <p style="position: absolute; top: 175px; left: 410px; font-size: 24px;">4) функцияның периодтылығы;</p>
+                <p style="position: absolute; top: 210px; left: 410px; font-size: 24px;">5) функцияның бірсарындылық аралықтары;</p>
+                <p style="position: absolute; top: 245px; left: 410px; font-size: 24px;">6) функцияның таңбатұрақтылық аралықтары;</p>
+                <p style="position: absolute; top: 280px; left: 410px; font-size: 24px;">7) функцияның ең үлкен және ең кіші мәндері;</p>
+                <p style="position: absolute; top: 315px; left: 410px; font-size: 24px;">8) функцияның жұптылығы,тақтылығы;</p>
+                <p style="position: absolute; top: 350px; left: 410px; font-size: 24px;">9) функцияның шектелгендігі;</p>
+                <p style="position: absolute; top: 385px; left: 410px; font-size: 24px;">10) функция үзіліссіздігі;</p>
+                <p style="position: absolute; top: 420px; left: 410px; font-size: 24px;">11) функцияның экстремумдары сипаттай алу;</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/7-10 сабак 10.4.1.4.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--5-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 0px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">5</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Бөлшек-сызықты функция</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.5 - бөлшек-сызықты функциясының</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">қасиеттерін анықтау және оның графигін</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">салу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/11-12 сабак.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--6-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">6</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Күрделі және кері функция</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">ұғымдары</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.6 - кері функцияның анықтамасын білу</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">және берілген функцияға кері функцияны</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">табу және өзара кері функциялар</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">графиктерінің орналасу қасиетін білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/13-16 сабак 10.4.1.6.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--7-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">7</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Күрделі және кері функция</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">ұғымдары</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.7 - f(g(x)) күрделі функциясын ажырата</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">білу және функциялар композициясын құру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/13-16 сабак 10.4.1.6.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--none-->
+            <div style="position: relative; height: 80px; width: 1400px; left: -2px; top: -6px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 15px; font-size: 24px;">Тригонометриялық функциялар</p>
+            </div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 70px; top: 1640px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 400px; top: 1640px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 920px; top: 1640px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 1120px; top: 1640px; border: 1px solid black;"></div>
+            <!--8-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">8</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.1 - тригонометриялық функциялар</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамаларын, қасиеттерін білу және</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">олардың графиктерін сала білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/17-21 сабак 10.2.3.1.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--9-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -10px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">9</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялардың графиктерін</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">түрлендірулер көмегімен</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">салу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.2 - тригонометриялық функциялардың</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">графиктерін түрлендірулер көмегімен сала</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/22-25 сабак 10.2.3.2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--10-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -12px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">10</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Арксинус, арккосинус,</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">арктангенс және</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">арккотангенс</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.3 - арксинус, арккосинус, арктангенс,</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">арккотангенс анықтамаларын білу және</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">олардың мәндерін таба білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/26-27 сабак 10.2.3.3.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--11-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -14px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">11</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.4 - кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">функциялардың анықтамалары мен</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">қасиеттерін білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/28-33 сабак 10.2.3.4.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--12-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -16px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">12</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.5 - кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">функциялардың графиктерін салу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/28-33 сабак 10.2.3.4.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--13-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -18px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">13</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.6 - кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">функциялары бар өрнектерді түрлендірулер</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">орындау есептер шығару</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/28-33 сабак 10.2.3.4.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif user.subscribe_date|date:"Y-m-d" <= user.last_login|date:"Y-m-d" %}
+<div style="position: relative; top: 170px; left: 225px; height: 2670px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
+    <p style="position: relative; top: 20px; left: 50px; font-size: 20px;">Тегін материал: 1</p>
+    <div style="position: relative; top: 20px; left: 50px; height: 2531px; width: 1400px; background: #fff; border: 2px solid black;">
+        <div style="position: relative; font-size: 24px; left: 20px; top: 10px;">
+            <div style="position: absolute; height: 64px; width: 0px; left: 50px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 380px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 900px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 1100px; top: -11px; border: 1px solid black;"></div>
+            <p>№</p>
+            <p style="position: absolute; left: 120px; top: 0px;">Сабақ тақырыбы</p>
+            <p style="position: absolute; left: 560px; top: 0px;">Оқу мақсаттары</p>
+            <p style="position: absolute; left: 940px; top: 0px;">Сағат саны</p>
+            <p style="position: absolute; left: 1200px; top: 0px;">Скачать</p>
+        </div>
+        <div>
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 10px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 10px; font-size: 42px;">1 тоқсан</p>
+                <p style="position: relative; top: 10px; font-size: 24px;">Функция, оның қасиеттері және графигі</p>
+            </div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 70px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 400px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 920px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1353px; width: 0px; left: 1120px; top: 210px; border: 1px solid black;"></div>
+            <!--1-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">1</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функция және оның берілу</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">тәсілдері. Функциялардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">графиктерін түрлендіру</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.1 - функция анықтамасын және</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">берілу тәсілдерін білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/10synyp/1-6 сабак 10.4.1.1-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--2-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 6px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">2</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функция және оның берілу</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">тәсілдері. Функциялардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">графиктерін түрлендіру</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.2 - функция графигіне түрлендірулер</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">орындай алу (параллель көшіру, сығу және</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">созу)</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--3-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">3</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функцияның қасиеттері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.3 функция қасиеттерін анықтай алу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--4-->
+            <div style="position: relative; height: 465px; width: 1400px; left: -2px; top: 2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">4</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Функцияның қасиеттері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.4 - функцияның берілген графигі</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">бойынша оның қасиеттерін:</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">1) функцияның анықталу облысы;</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">2) функцияның мәндер жиыны;</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">3) функцияның нөлдері;</p>
+                <p style="position: absolute; top: 175px; left: 410px; font-size: 24px;">4) функцияның периодтылығы;</p>
+                <p style="position: absolute; top: 210px; left: 410px; font-size: 24px;">5) функцияның бірсарындылық аралықтары;</p>
+                <p style="position: absolute; top: 245px; left: 410px; font-size: 24px;">6) функцияның таңбатұрақтылық аралықтары;</p>
+                <p style="position: absolute; top: 280px; left: 410px; font-size: 24px;">7) функцияның ең үлкен және ең кіші мәндері;</p>
+                <p style="position: absolute; top: 315px; left: 410px; font-size: 24px;">8) функцияның жұптылығы,тақтылығы;</p>
+                <p style="position: absolute; top: 350px; left: 410px; font-size: 24px;">9) функцияның шектелгендігі;</p>
+                <p style="position: absolute; top: 385px; left: 410px; font-size: 24px;">10) функция үзіліссіздігі;</p>
+                <p style="position: absolute; top: 420px; left: 410px; font-size: 24px;">11) функцияның экстремумдары сипаттай алу;</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--5-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 0px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">5</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Бөлшек-сызықты функция</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.5 - бөлшек-сызықты функциясының</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">қасиеттерін анықтау және оның графигін</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">салу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--6-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">6</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Күрделі және кері функция</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">ұғымдары</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.6 - кері функцияның анықтамасын білу</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">және берілген функцияға кері функцияны</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">табу және өзара кері функциялар</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">графиктерінің орналасу қасиетін білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--7-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">7</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Күрделі және кері функция</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">ұғымдары</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.4.1.7 - f(g(x)) күрделі функциясын ажырата</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">білу және функциялар композициясын құру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--none-->
+            <div style="position: relative; height: 80px; width: 1400px; left: -2px; top: -6px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 15px; font-size: 24px;">Тригонометриялық функциялар</p>
+            </div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 70px; top: 1640px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 400px; top: 1640px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 920px; top: 1640px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 888px; width: 0px; left: 1120px; top: 1640px; border: 1px solid black;"></div>
+            <!--8-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">8</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.1 - тригонометриялық функциялар</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамаларын, қасиеттерін білу және</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">олардың графиктерін сала білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--9-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -10px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">9</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялардың графиктерін</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">түрлендірулер көмегімен</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">салу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.2 - тригонометриялық функциялардың</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">графиктерін түрлендірулер көмегімен сала</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--10-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -12px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">10</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Арксинус, арккосинус,</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">арктангенс және</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">арккотангенс</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.3 - арксинус, арккосинус, арктангенс,</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">арккотангенс анықтамаларын білу және</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">олардың мәндерін таба білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--11-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -14px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">11</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.4 - кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">функциялардың анықтамалары мен</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">қасиеттерін білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--12-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -16px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">12</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.5 - кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">функциялардың графиктерін салу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--13-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -18px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">13</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">функциялар, олардың</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">қасиеттері мен графиктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">10.2.3.6 - кері тригонометриялық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">функциялары бар өрнектерді түрлендірулер</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">орындау есептер шығару</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<div style="position: relative; top: 250px; background-color: #1226de; width: 100%; height: 200px;">
+    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
+    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
+    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
+    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
+    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
+    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
+    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
+    <div style="position: relative; top: 15px;">
+        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
+        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
+        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
+        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
+        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
+        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+    </div>
+</div>
+{% endblock %}

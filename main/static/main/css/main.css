@@ -1,0 +1,167 @@
+body {
+    background: #fff;
+}
+
+header {
+    background: #ffffff;
+    width: 100%;
+    height: 8vh;
+    color: #181818;
+    -moz-box-shadow: 0 0 4px #000;
+    -webkit-box-shadow: 0 0 4px #000;
+    box-shadow: 0 0 4px #000;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+
+header img {
+    width: 120px;
+    position: relative;
+    top: -25px;
+    margin-left: 10px;
+}
+
+
+header .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: black;
+}
+
+header h3 {
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+.dropdown-content {list-style: none;}
+.dropdown-content li {
+    color: #181818;
+    position: relative;
+    top: -10px;
+    display: block;
+    margin-top: 15px;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+}
+
+
+.anim1 {
+    position: relative;
+    top: -20px;
+    left: 35px;
+}
+
+.container1 h1 {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.container1 p {
+    font-size: 150%;
+    position: relative;
+    left: 40px;
+    top: -32px;
+}
+
+.container1 li i {
+    position: relative;
+    left: 20px;
+    top: 0px;
+}
+
+.container1 li {list-style: none}
+
+.anim1 li i {
+    position: absolute;
+    top: 0px;
+    left: -20px;
+}
+
+.rectangle1 {
+    width: 1536px;
+	height: 100px;
+    background: #b8b8b8;
+    position: relative;
+    left: 384px;
+    top: 300px;
+    opacity: 0.33;
+}
+
+.style1 {
+    position: absolute;
+    top: 170px;
+    left: 400px;
+    background-color: #fff;
+    width: 400px;
+    height: 200px;
+    border-radius: 30px 30px 30px 30px;
+    -moz-box-shadow: 0 0 1px #0095ff;
+    -webkit-box-shadow: 0 0 1px #0095ff;
+    box-shadow: 0 0 3px #0095ff;
+    transition: all 0.3s ease-out;
+}
+
+.style1:hover {
+    -moz-box-shadow: 0 0 3px #0076c9;
+    -webkit-box-shadow: 0 0 3px #0076c9;
+    box-shadow: 0 0 8px #0076c9;
+}
+
+/* Стили для кнопки выпадающего меню */
+.dropdown {
+    position: relative; /* Для правильного позиционирования выпадающего содержимого */
+    display: inline-block; /* Инлайн-блок для размещения элементов рядом */
+}
+
+.dropbtn {
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white; /* Белый текст */
+    padding: 15px; /* Отступы внутри кнопки */
+    font-size: 20px; /* Размер шрифта */
+    border: none; /* Без границ */
+    cursor: pointer; /* Курсор указывает на кликабельность */
+    transition: background-color 0.3s; /* Плавный переход для фона */
+}
+
+.dropbtn:hover {
+    background-color: #45a049; /* Темнее зеленый фон при наведении */
+}
+
+/* Стили для содержимого выпадающего меню */
+.dropdown-content {
+    display: none; /* Скрыть содержимое по умолчанию */
+    position: absolute; /* Абсолютное позиционирование для выпадающего меню */
+    background-color: #f9f9f9; /* Светлый фон для содержимого */
+    min-width: 120px; /* Минимальная ширина содержимого */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Тень для содержимого */
+    z-index: 1; /* Обеспечивает, чтобы меню было выше остальных элементов */
+}
+
+/* Стили для ссылок в выпадающем меню */
+.dropdown-content a {
+    color: black; /* Черный текст */
+    padding: 5px 14px; /* Отступы вокруг текста */
+    text-decoration: none; /* Без подчеркивания текста */
+    display: block; /* Сделать ссылки блочными элементами для лучшего отображения */
+}
+
+/* Изменение фона ссылок при наведении */
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Светлый фон при наведении на ссылку */
+}
+
+/* Показать выпадающее меню при наведении на кнопку */
+.dropdown:hover .dropdown-content {
+    display: block; /* Показывает содержимое при наведении на родительский элемент */
+}

@@ -1,0 +1,294 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}5 - сынып{% endblock %}
+
+{% block content %}
+<style>
+    .mainmenu1 {
+        position: relative;
+        height: 70px;
+        width: 1450px;
+        background: #ffffff;
+        -moz-box-shadow: 0 0 2px #1226de;
+        -webkit-box-shadow: 0 0 2px #1226de;
+        box-shadow: 0 0 2px #1226de;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .mainmenu2 {
+        position: relative;
+        height: 70px;
+        width: 1450px;
+        background: #ffffff;
+        -moz-box-shadow: 0 0 2px #7d7d7d;
+        -webkit-box-shadow: 0 0 2px #7d7d7d;
+        box-shadow: 0 0 2px #7d7d7d;
+        border-radius: 10px 10px 10px 10px;
+    }
+</style>
+<div style="position: relative; width: 1500px; height: 150px; top: 140px; left: 225px; background-color: #1226de; border-radius: 20px 20px 20px 20px;">
+    <h1 style="position: absolute; top: 20px; left: 700px; color: #ffffff;">5 - сынып</h1>
+    <div class="dropdown" style="position: relative; top: 50px; left: 20px; list-style: none;">
+        <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
+        <div class="dropdown-content">
+            <a href="{% url 'preza5' %}"><li>Математика</li></a>
+        </div>
+    </div>
+    <div style="position: relative; width: 140px; height: 35px; background-color: #ffffff; top: 7px; left: 190px; border-radius: 10px 10px 10px 10px;">
+        <p style="position: relative; top: 2px; left: 13px; font-size: 20px; color: blue">Математика</p>
+    </div>
+    <div style="position: relative; width: 150px; height: 35px; background-color: #ffffff; top: -28px; left: 390px; border-radius: 10px 10px 10px 10px;">
+        <p style="position: relative; top: 2px; left: 15px; font-size: 20px; color: blue; text-decoration: none;">Презентация</p>
+    </div>
+</div>
+{% if user.subscribe_date|date:"Y-m-d" >= user.last_login|date:"Y-m-d" %}
+<div style="position: relative; top: 170px; left: 225px; height: 1260px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
+    <p style="position: relative; top: 20px; left: 20px; font-size: 20px;">Барлық материал ашық</p>
+    <!--    1-->
+    <div class="mainmenu1" style="position: relative; top: 30px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандар</p>
+        <a href="{% static 'main/rar/5synyp/1Натурал сандар және нөл.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    2-->
+    <div class="mainmenu1" style="position: relative; top: 40px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Координаталық сәуле</p>
+        <a href="{% static 'main/rar/5synyp/2Координаталық сәуле Натурал сандарды және нөл санын координаталық.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    3-->
+    <div class="mainmenu1" style="position: relative; top: 50px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">3</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандарды салыстыру</p>
+        <a href="{% static 'main/rar/5synyp/3Натурал сандарды салыстыру Қос теңсіздік.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    4-->
+    <div class="mainmenu1" style="position: relative; top: 60px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">4</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандарға арифметикалық амалдар қолдану</p>
+        <a href="{% static 'main/rar/5synyp/4Арифметикалық амалдардың қасиеттері Натурал сандарға амалдар.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    5-->
+    <div class="mainmenu1" style="position: relative; top: 70px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">5</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Санды және әріпті өрнектер. Өрнектерді ықшамдау</p>
+        <a href="{% static 'main/rar/5synyp/5Санды өрнектер Әріпті өрнектер.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    6-->
+    <div class="mainmenu1" style="position: relative; top: 80px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">6</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Теңдеу</p>
+        <a href="{% static 'main/rar/5synyp/6Теңдеу.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    7-->
+    <div class="mainmenu1" style="position: relative; top: 90px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">7</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Мәтінді есептерді шығару</p>
+        <a href="{% static 'main/rar/5synyp/7Мәтінді есептерді шығару.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    8-->
+    <div class="mainmenu1" style="position: relative; top: 100px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">8</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандардың тізбегі</p>
+        <a href="{% static 'main/rar/5synyp/8Натурал сандардан тұратын сандар тізбегі.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    10-->
+    <div class="mainmenu1" style="position: relative; top: 110px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">9</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Бөлінгіштіктің негізгі қасиеттері</p>
+        <a href="{% static 'main/rar/5synyp/9Бөлінгіштіктің негізгі қасиеттеріне есептер шығару.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    12-->
+    <div class="mainmenu1" style="position: relative; top: 120px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">10</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандарды жай көбейткіштерге жіктеу</p>
+        <a href="{% static 'main/rar/5synyp/10Натурал cандарды жай көбейткіштерге жіктеу.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    15-->
+    <div class="mainmenu1" style="position: relative; top: 130px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">11</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Ең үлкен ортақ бөлгіш (ЕҮОБ) және ең кіші ортақ еселік (ЕКОЕ)</p>
+        <a href="{% static 'main/rar/5synyp/11Ең үлкен ортақ бөлгіш (ЕҮОБ) және ең кіші ортақ еселік (ЕКОЕ).rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    16-->
+    <div class="mainmenu1" style="position: relative; top: 140px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">12</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жай бөлшек. Жай бөлшектерді оқу және жазу</p>
+        <a href="{% static 'main/rar/5synyp/12Жай бөлшек.Жай бөлшектерді оқу және жазу.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    17-->
+    <div class="mainmenu1" style="position: relative; top: 150px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">13</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жай бөлшектің негізгі қасиеті</p>
+        <a href="{% static 'main/rar/5synyp/13Жай бөлшектің негізгі қасиеті.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    18-->
+    <div class="mainmenu1" style="position: relative; top: 160px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">14</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Өрнектерді ықшамдау</p>
+        <a href="{% static 'main/rar/5synyp/14Өрнектерді ықшамдау.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+</div>
+{% elif user.subscribe_date|date:"Y-m-d" <= user.last_login|date:"Y-m-d" %}
+<div style="position: relative; top: 170px; left: 225px; height: 1260px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
+    <p style="position: relative; top: 20px; left: 20px; font-size: 20px;">Тегін материал: 1</p>
+    <!--    1-->
+    <div class="mainmenu1" style="position: relative; top: 30px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандар</p>
+        <a href="{% static 'main/rar/5synyp/1Натурал сандар және нөл.rar' %}"  style="position: relative; top: -93px; left: 1320px;" class="btn btn-success">Скачать</a>
+    </div>
+    <!--    2-->
+    <div class="mainmenu2" style="position: relative; top: 40px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Координаталық сәуле</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    3-->
+    <div class="mainmenu2" style="position: relative; top: 50px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">3</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандарды салыстыру</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    4-->
+    <div class="mainmenu2" style="position: relative; top: 60px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">4</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандарға арифметикалық амалдар қолдану</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    5-->
+    <div class="mainmenu2" style="position: relative; top: 70px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">5</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Санды және әріпті өрнектер. Өрнектерді ықшамдау</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    6-->
+    <div class="mainmenu2" style="position: relative; top: 80px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">6</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Теңдеу</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    7-->
+    <div class="mainmenu2" style="position: relative; top: 90px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">7</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Мәтінді есептерді шығару</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    8-->
+    <div class="mainmenu2" style="position: relative; top: 100px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">8</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандардың тізбегі</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    10-->
+    <div class="mainmenu2" style="position: relative; top: 110px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">9</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Бөлінгіштіктің негізгі қасиеттері</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    12-->
+    <div class="mainmenu2" style="position: relative; top: 120px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">10</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Натурал сандарды жай көбейткіштерге жіктеу</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    15-->
+    <div class="mainmenu2" style="position: relative; top: 130px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">11</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Ең үлкен ортақ бөлгіш (ЕҮОБ) және ең кіші ортақ еселік (ЕКОЕ)</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    16-->
+    <div class="mainmenu2" style="position: relative; top: 140px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">12</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жай бөлшек. Жай бөлшектерді оқу және жазу</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    17-->
+    <div class="mainmenu2" style="position: relative; top: 150px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">13</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жай бөлшектің негізгі қасиеті</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+    <!--    18-->
+    <div class="mainmenu2" style="position: relative; top: 160px; left: 20px;">
+        <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
+            <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">14</p>
+        </div>
+        <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Өрнектерді ықшамдау</p>
+        <a class="btn btn-secondary disabled" style="position: relative; top: -93px; left: 1320px;" role="button" aria-disabled="true">Скачать</a>
+    </div>
+</div>
+{% endif %}
+<div style="position: relative; top: 250px; background-color: #1226de; width: 100%; height: 200px;">
+    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
+    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
+    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
+    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
+    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
+    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
+    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
+    <div style="position: relative; top: 15px;">
+        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
+        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
+        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
+        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
+        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
+        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+    </div>
+</div>
+{% endblock %}

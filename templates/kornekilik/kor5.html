@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}5 - сынып{% endblock %}
+
+{% block content %}
+<div style="position: relative; width: 1500px; height: 150px; top: 140px; left: 225px; background-color: #1226de; border-radius: 20px 20px 20px 20px;">
+    <h1 style="position: absolute; top: 20px; left: 700px; color: #ffffff;">5 - сынып</h1>
+    <div class="dropdown" style="position: relative; top: 50px; left: 20px; list-style: none;">
+        <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
+        <div class="dropdown-content">
+            <a href="{% url '5' %}"><li>Математика</li></a>
+        </div>
+    </div>
+    <div style="position: relative; width: 140px; height: 35px; background-color: #ffffff; top: 7px; left: 190px; border-radius: 10px 10px 10px 10px;">
+        <p style="position: relative; top: 2px; left: 13px; font-size: 20px; color: blue">Математика</p>
+    </div>
+</div>
+<a href="{% static 'main/img/img1.jpg' %}" download=""><img src="{% static 'main/img/img1.jpg' %}" alt="word" style="position: relative; top: 200px; left: 100px; width: 300px; border: 1px solid black;"></a>
+{% endblock %}

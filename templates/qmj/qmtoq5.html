@@ -1,0 +1,754 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}5 - сынып{% endblock %}
+
+{% block content %}
+<style>
+    .mainmenu1 {
+        position: relative;
+        height: 70px;
+        width: 1450px;
+        background: #ffffff;
+        -moz-box-shadow: 0 0 2px #1226de;
+        -webkit-box-shadow: 0 0 2px #1226de;
+        box-shadow: 0 0 2px #1226de;
+        border-radius: 10px 10px 10px 10px;
+    }
+</style>
+<div style="position: relative; width: 1500px; height: 150px; top: 140px; left: 225px; background-color: #1226de; border-radius: 20px 20px 20px 20px;">
+    <h1 style="position: absolute; top: 20px; left: 700px; color: #ffffff;">5 - сынып</h1>
+    <div class="dropdown" style="position: relative; top: 50px; left: 20px; list-style: none;">
+        <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
+        <div class="dropdown-content">
+            <a href="{% url 'qmtoq5' %}"><li>Математика</li></a>
+        </div>
+    </div>
+    <div style="position: relative; width: 140px; height: 35px; background-color: #ffffff; top: 7px; left: 190px; border-radius: 10px 10px 10px 10px;">
+        <p style="position: relative; top: 2px; left: 13px; font-size: 20px; color: blue">Математика</p>
+    </div>
+    <div style="position: relative; width: 80px; height: 35px; background-color: #ffffff; top: -28px; left: 390px; border-radius: 10px 10px 10px 10px;">
+        <p style="position: relative; top: 2px; left: 15px; font-size: 20px; color: blue; text-decoration: none;">ҚМЖ</p>
+    </div>
+</div>
+{% if user.subscribe_date|date:"Y-m-d" >= user.last_login|date:"Y-m-d" %}
+<div style="position: relative; top: 170px; left: 225px; height: 4670px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
+    <p style="position: relative; top: 20px; left: 50px; font-size: 20px;">Барлық материал ашық</p>
+    <div style="position: relative; top: 20px; left: 50px; height: 4533px; width: 1400px; background: #fff; border: 2px solid black;">
+        <div style="position: relative; font-size: 24px; left: 20px; top: 10px;">
+            <div style="position: absolute; height: 64px; width: 0px; left: 50px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 380px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 900px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 1100px; top: -11px; border: 1px solid black;"></div>
+            <p>№</p>
+            <p style="position: absolute; left: 120px; top: 0px;">Сабақ тақырыбы</p>
+            <p style="position: absolute; left: 560px; top: 0px;">Оқу мақсаттары</p>
+            <p style="position: absolute; left: 940px; top: 0px;">Сағат саны</p>
+            <p style="position: absolute; left: 1200px; top: 0px;">Скачать</p>
+        </div>
+        <div>
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 10px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 10px; font-size: 42px;">1 тоқсан</p>
+                <p style="position: relative; top: 10px; font-size: 24px;">Натурал сандар және нөл саны</p>
+            </div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 70px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 400px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 920px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 1120px; top: 210px; border: 1px solid black;"></div>
+            <!--1-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">1</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Натурал сандар және нөл</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.1 - натурал сандар жиыны ұғымын</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">меңгеру</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.1.2 - тақ және жұп сандар ұғымдарын</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">меңгеру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/1 сабак 5.1.1.1-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--2-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: 6px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">2</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Координаталық сәуле.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Натурал сандарды</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">салыстыру. Қос теңсіздік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.3.1.1 - өлшеудің түрлі ұзындық бірліктерін</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">білу және координаталық сәуледегі бірлік</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">кесінді дегенді түсіну</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.5.2.2 - натурал сандарды координаталық</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">сәуледе кескіндеу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/2-4 сабак 5.3.1.1-5.5.2.2-5.5.2.7.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--3-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: 4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">3</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Координаталық сәуле.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Натурал сандарды</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">салыстыру. Қос теңсіздік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.2.7 - натурал сандарды салыстыру мен</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">реттеуді талап ететін жағдайды зерттеу</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.1 - натурал сандарды салыстыру,</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">сонымен қатар координаталық сәуленің</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">көмегімен салыстыру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/2-4 сабак 5.3.1.1-5.5.2.2-5.5.2.7.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--4-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">4</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Координаталық сәуле.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Натурал сандарды</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">салыстыру. Қос теңсіздік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.2.6 - натурал сандарды салыстырудың</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">нәтижесін >,<,= белгілері арқылы жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/2-4 сабак 5.3.1.1-5.5.2.2-5.5.2.7.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--5-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: 0px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">5</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Арифметикалық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">амалдардың қасиеттері.</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">Натурал сандарға</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">арифметикалық амалдар</p>
+                <p style="position: absolute; top: 140px; left: 80px; font-size: 24px;">қолдану</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.2 - амалдар саны төрттен артық болатын</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">жақшамен және жақшасыз берілген</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">өрнектердегі амалдардың орындалу ретін</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">анықтау және мәндерін табу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/5-6 сабак 5.1.2.3-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--6-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">6</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Арифметикалық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">амалдардың қасиеттері.</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">Натурал сандарға</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">арифметикалық амалдар</p>
+                <p style="position: absolute; top: 140px; left: 80px; font-size: 24px;">қолдану</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.3 - санды өрнектердің мәндерін табу</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">үшін көбейту мен қосу амалдарының</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">қасиеттерін қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/5-6 сабак 5.1.2.3-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--7-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">7</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Санды және әріпті өрнектер,</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">олардың мәндері.</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">Өрнектерді ықшамдау</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.2.1.1 - қосу және көбейту амалдарының</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">қасиеттерін қолданып, әріпті өрнектерді</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">түрлендіру</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.2.1.2 - әріптердің берілген мәндері</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">бойынша әріпті өрнектердің мәндерін табу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/7-8 сабак 5.2.1.1-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--8-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -6px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">8</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Теңдеу. Теңдеудің түбірі.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Теңдеуді шешу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.2.2.1 - арифметикалық амалдардың белгісіз</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">компоненттерін табу ережесі негізінде</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">теңдеулерді шешу</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.2.2.2 - теңдеудің шығарылуының</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">дұрыстығын тексеру тәсілдерін қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/9-10 сабак 5.2.2.1-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--9-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">9</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Формула. Формула арқылы</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">есептеу. Мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">шығару. Натурал сандардан</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">тұратын сандар тізбегі</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.1.1 - натурал сандарға арифметикалық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">амалдар қолдана отырып, мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">шығару</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.5.1.8 - әріпті өрнектерді құру және оларды</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">есептер шығаруда қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/11-13 сабак 5.2.3.3-2. 5.5.1.-8.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--10-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -10px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">10</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Формула. Формула арқылы</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">есептеу. Мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">шығару. Натурал сандардан</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">тұратын сандар тізбегі</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.2.3.2 - натурал сандар тізбегінің жеткіліксіз</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">элементтерін табу</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.2.3.3 - натурал сандар тізбегінің</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">заңдылықтарын құрастыру және тізбектерді</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/11-13 сабак 5.2.3.3-2. 5.5.1.-8.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--11-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -12px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">11</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Формула. Формула арқылы</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">есептеу. Мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">шығару. Натурал сандардан</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">тұратын сандар тізбегі</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.1.9 - мәтінді есептерді шығару үшін</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">формулаларды қолдану</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.2.3.1 - натурал сандар тізбегінің</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">заңдылықтарын анықтау</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/11-13 сабак 5.2.3.3-2. 5.5.1.-8.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--none-->
+            <div style="position: relative; height: 80px; width: 1400px; left: -2px; top: -14px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 15px; font-size: 24px;">Натурал сандардың бөлінгіштігі</p>
+            </div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 70px; top: 2198px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 400px; top: 2198px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 920px; top: 2198px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 1120px; top: 2198px; border: 1px solid black;"></div>
+            <!--12-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -16px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">12</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Натурал сандардың</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">бөлгіштері мен еселіктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.5 - натурал санның бөлгіші мен еселігі</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамаларын білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/14 сабак 5.1.1.5.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--13-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -18px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">13</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Жай және құрама сандар</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.6 - жай және құрама сандардың</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамаларын білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/15 сабак 5.1.1.6.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--14-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -20px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">14</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Бөлінгіштіктің негізгі</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">қасиеттері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.10 - көбейтіндінің берілген натурал</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">санға бөлінгіштігін талдау</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.11 - қосындының және айырымның</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">берілген натурал санға бөлінгіштігін талдау</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/16-17 сабак 5.1.2.10-11.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--15-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -22px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">15</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">2, 3, 5, 9, 10 бөлінгіштік</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">белгілері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.5 - натурал сандардың 2-ге, 5-ке, 10-ға</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">бөлінгіштік белгілерін қолдану</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.6 - натурал сандардың 3-ке және 9-ға</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">бөлінгіштік белгілерін қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/18-19 сабак 5.1.2.5-6.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--16-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -24px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">16</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Дәреже</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.3 - натурал сан дәрежесінің</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамасын білу</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.1.4 - натурал санды ондық жазылу түрінде</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">көрсету</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/20-21 сабак 5.1.1.3-4. 5.1.2.4.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--17-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -26px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">17</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Дәреже</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.4 - бірдей сандардың көбейтіндісін</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">дәреже түрінде жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/20-21 сабак 5.1.1.3-4. 5.1.2.4.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--18-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -28px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">18</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Натурал сандарды жай</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">көбейткіштерге жіктеу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.7 - құрама сандарды жай</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">көбейткіштерге жіктеу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/22-24 сабак 5.1.2.7.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--19-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -30px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">19</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Ең үлкен ортақ бөлгіш.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Өзара жай сандар. Ең кіші</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">ортақ еселік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.7 - ортақ бөлгіш, ортақ еселік, ең үлкен</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">ортақ бөлгіш (ЕҮОБ), ең кіші ортақ еселік</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">(ЕКОЕ) ұғымдарының анықтамаларын білу</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.1.2.12 - екі және одан артық сандардың</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">ЕҮОБ-ін және ЕКОЕ-ін табу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/26-29 сабак 5.1.1.7 5.1.2.12.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--20-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -32px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">20</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Ең үлкен ортақ бөлгіш.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Өзара жай сандар. Ең кіші</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">ортақ еселік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.8 - өзара жай сандардың анықтамасын</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/26-29 сабак 5.1.1.7 5.1.2.12.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--21-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -34px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">21</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Ең үлкен ортақ бөлгіш.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Өзара жай сандар. Ең кіші</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">ортақ еселік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.1.2 - мәтінді есептерді шығаруда ЕҮОБ</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">және ЕКОЕ қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/26-29 сабак 5.1.1.7 5.1.2.12.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--none-->
+            <div style="position: relative; height: 80px; width: 1400px; left: -2px; top: -36px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 15px; font-size: 24px;">Жай бөлшектер</p>
+            </div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 70px; top: 3790px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 400px; top: 3790px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 920px; top: 3790px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 1120px; top: 3790px; border: 1px solid black;"></div>
+            <!--22-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -38px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">22</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Жай бөлшек. Жай</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">бөлшектерді оқу және жазу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.9 - жай бөлшек ұғымын меңгеру</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">5.5.2.1 - жай бөлшектерді оқу және жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/30 сабак 5.1.1.9-5.5.2.1.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--23-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -40px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">23</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Жай бөлшектің негізгі</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">қасиеті</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.14 - жай бөлшектерді қысқартуда</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">бөлшектің негізгі қасиетін қолдану</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.15 - жай бөлшекті жаңа бөлімге келтіру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/31-33 сабак 5.1.2.14 5.1.2.15.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--24-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -42px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">24</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Дұрыс және бұрыс жай</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">бөлшектер</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.10 - дұрыс және бұрыс бөлшектерді</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">ажырату</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/34-35 сабак 5.1.1.10.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--25-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -44px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">25</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Аралас сандар</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.11 - аралас сан анықтамасын білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/36-38 сабак 5.1.1.11-13.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--26-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -46px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">26</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Аралас сандар</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.13 - бұрыс бөлшекті</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">аралас санға және аралас санды бұрыс</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">бөлшекке айналдыру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/39-41 сабак 5.5.2.3.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif user.subscribe_date|date:"Y-m-d" <= user.last_login|date:"Y-m-d" %}
+<div style="position: relative; top: 170px; left: 225px; height: 4670px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
+    <p style="position: relative; top: 20px; left: 50px; font-size: 20px;">Тегін материал: 1</p>
+    <div style="position: relative; top: 20px; left: 50px; height: 4533px; width: 1400px; background: #fff; border: 2px solid black;">
+        <div style="position: relative; font-size: 24px; left: 20px; top: 10px;">
+            <div style="position: absolute; height: 64px; width: 0px; left: 50px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 380px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 900px; top: -11px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 64px; width: 0px; left: 1100px; top: -11px; border: 1px solid black;"></div>
+            <p>№</p>
+            <p style="position: absolute; left: 120px; top: 0px;">Сабақ тақырыбы</p>
+            <p style="position: absolute; left: 560px; top: 0px;">Оқу мақсаттары</p>
+            <p style="position: absolute; left: 940px; top: 0px;">Сағат саны</p>
+            <p style="position: absolute; left: 1200px; top: 0px;">Скачать</p>
+        </div>
+        <div>
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 10px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 10px; font-size: 42px;">1 тоқсан</p>
+                <p style="position: relative; top: 10px; font-size: 24px;">Натурал сандар және нөл саны</p>
+            </div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 70px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 400px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 920px; top: 210px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1910px; width: 0px; left: 1120px; top: 210px; border: 1px solid black;"></div>
+            <!--1-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">1</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Натурал сандар және нөл</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.1 - натурал сандар жиыны ұғымын</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">меңгеру</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.1.2 - тақ және жұп сандар ұғымдарын</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">меңгеру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a href="{% static 'main/docx/5synyp/1 сабак 5.1.1.1-2.docx' %}" class="btn btn-success" style="position: absolute; top: 10px; left: 1210px;">Скачать</a>
+            </div>
+            <!--2-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: 6px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">2</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Координаталық сәуле.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Натурал сандарды</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">салыстыру. Қос теңсіздік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.3.1.1 - өлшеудің түрлі ұзындық бірліктерін</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">білу және координаталық сәуледегі бірлік</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">кесінді дегенді түсіну</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.5.2.2 - натурал сандарды координаталық</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">сәуледе кескіндеу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--3-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: 4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">3</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Координаталық сәуле.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Натурал сандарды</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">салыстыру. Қос теңсіздік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.2.7 - натурал сандарды салыстыру мен</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">реттеуді талап ететін жағдайды зерттеу</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.1 - натурал сандарды салыстыру,</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">сонымен қатар координаталық сәуленің</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">көмегімен салыстыру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--4-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: 2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">4</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Координаталық сәуле.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Натурал сандарды</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">салыстыру. Қос теңсіздік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.2.6 - натурал сандарды салыстырудың</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">нәтижесін >,<,= белгілері арқылы жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--5-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: 0px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">5</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Арифметикалық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">амалдардың қасиеттері.</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">Натурал сандарға</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">арифметикалық амалдар</p>
+                <p style="position: absolute; top: 140px; left: 80px; font-size: 24px;">қолдану</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.2 - амалдар саны төрттен артық болатын</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">жақшамен және жақшасыз берілген</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">өрнектердегі амалдардың орындалу ретін</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">анықтау және мәндерін табу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--6-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -2px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">6</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Арифметикалық</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">амалдардың қасиеттері.</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">Натурал сандарға</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">арифметикалық амалдар</p>
+                <p style="position: absolute; top: 140px; left: 80px; font-size: 24px;">қолдану</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.3 - санды өрнектердің мәндерін табу</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">үшін көбейту мен қосу амалдарының</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">қасиеттерін қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--7-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -4px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">7</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Санды және әріпті өрнектер,</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">олардың мәндері.</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">Өрнектерді ықшамдау</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.2.1.1 - қосу және көбейту амалдарының</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">қасиеттерін қолданып, әріпті өрнектерді</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">түрлендіру</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.2.1.2 - әріптердің берілген мәндері</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">бойынша әріпті өрнектердің мәндерін табу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--8-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -6px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">8</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Теңдеу. Теңдеудің түбірі.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Теңдеуді шешу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.2.2.1 - арифметикалық амалдардың белгісіз</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">компоненттерін табу ережесі негізінде</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">теңдеулерді шешу</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.2.2.2 - теңдеудің шығарылуының</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">дұрыстығын тексеру тәсілдерін қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--9-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -8px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 25px; font-size: 34px;">9</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Формула. Формула арқылы</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">есептеу. Мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">шығару. Натурал сандардан</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">тұратын сандар тізбегі</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.1.1 - натурал сандарға арифметикалық</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">амалдар қолдана отырып, мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">шығару</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.5.1.8 - әріпті өрнектерді құру және оларды</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">есептер шығаруда қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--10-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -10px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">10</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Формула. Формула арқылы</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">есептеу. Мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">шығару. Натурал сандардан</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">тұратын сандар тізбегі</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.2.3.2 - натурал сандар тізбегінің жеткіліксіз</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">элементтерін табу</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.2.3.3 - натурал сандар тізбегінің</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">заңдылықтарын құрастыру және тізбектерді</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--11-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -12px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">11</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Формула. Формула арқылы</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">есептеу. Мәтінді есептерді</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">шығару. Натурал сандардан</p>
+                <p style="position: absolute; top: 105px; left: 80px; font-size: 24px;">тұратын сандар тізбегі</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.1.9 - мәтінді есептерді шығару үшін</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">формулаларды қолдану</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.2.3.1 - натурал сандар тізбегінің</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">заңдылықтарын анықтау</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--none-->
+            <div style="position: relative; height: 80px; width: 1400px; left: -2px; top: -14px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 15px; font-size: 24px;">Натурал сандардың бөлінгіштігі</p>
+            </div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 70px; top: 2198px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 400px; top: 2198px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 920px; top: 2198px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 1515px; width: 0px; left: 1120px; top: 2198px; border: 1px solid black;"></div>
+            <!--12-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -16px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">12</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Натурал сандардың</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">бөлгіштері мен еселіктері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.5 - натурал санның бөлгіші мен еселігі</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамаларын білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--13-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -18px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">13</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Жай және құрама сандар</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.6 - жай және құрама сандардың</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамаларын білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--14-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -20px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">14</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Бөлінгіштіктің негізгі</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">қасиеттері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.10 - көбейтіндінің берілген натурал</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">санға бөлінгіштігін талдау</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.11 - қосындының және айырымның</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">берілген натурал санға бөлінгіштігін талдау</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--15-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -22px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">15</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">2, 3, 5, 9, 10 бөлінгіштік</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">белгілері</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.5 - натурал сандардың 2-ге, 5-ке, 10-ға</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">бөлінгіштік белгілерін қолдану</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.6 - натурал сандардың 3-ке және 9-ға</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">бөлінгіштік белгілерін қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--16-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -24px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">16</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Дәреже</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.3 - натурал сан дәрежесінің</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">анықтамасын білу</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.1.4 - натурал санды ондық жазылу түрінде</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">көрсету</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--17-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -26px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">17</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Дәреже</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.4 - бірдей сандардың көбейтіндісін</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">дәреже түрінде жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--18-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -28px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">18</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Натурал сандарды жай</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">көбейткіштерге жіктеу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.7 - құрама сандарды жай</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">көбейткіштерге жіктеу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--19-->
+            <div style="position: relative; height: 185px; width: 1400px; left: -2px; top: -30px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">19</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Ең үлкен ортақ бөлгіш.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Өзара жай сандар. Ең кіші</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">ортақ еселік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.7 - ортақ бөлгіш, ортақ еселік, ең үлкен</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">ортақ бөлгіш (ЕҮОБ), ең кіші ортақ еселік</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">(ЕКОЕ) ұғымдарының анықтамаларын білу</p>
+                <p style="position: absolute; top: 105px; left: 410px; font-size: 24px;">5.1.2.12 - екі және одан артық сандардың</p>
+                <p style="position: absolute; top: 140px; left: 410px; font-size: 24px;">ЕҮОБ-ін және ЕКОЕ-ін табу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--20-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -32px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">20</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Ең үлкен ортақ бөлгіш.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Өзара жай сандар. Ең кіші</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">ортақ еселік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.8 - өзара жай сандардың анықтамасын</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--21-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -34px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">21</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Ең үлкен ортақ бөлгіш.</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">Өзара жай сандар. Ең кіші</p>
+                <p style="position: absolute; top: 70px; left: 80px; font-size: 24px;">ортақ еселік</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.5.1.2 - мәтінді есептерді шығаруда ЕҮОБ</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">және ЕКОЕ қолдану</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--none-->
+            <div style="position: relative; height: 80px; width: 1400px; left: -2px; top: -36px; border: 2px solid black; text-align: center;">
+                <p style="position: relative; top: 15px; font-size: 24px;">Жай бөлшектер</p>
+            </div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 70px; top: 3790px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 400px; top: 3790px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 920px; top: 3790px; border: 1px solid black;"></div>
+            <div style="position: absolute; height: 740px; width: 0px; left: 1120px; top: 3790px; border: 1px solid black;"></div>
+            <!--22-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -38px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">22</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Жай бөлшек. Жай</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">бөлшектерді оқу және жазу</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.9 - жай бөлшек ұғымын меңгеру</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">5.5.2.1 - жай бөлшектерді оқу және жазу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--23-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -40px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">23</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Жай бөлшектің негізгі</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">қасиеті</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.14 - жай бөлшектерді қысқартуда</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">бөлшектің негізгі қасиетін қолдану</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">5.1.2.15 - жай бөлшекті жаңа бөлімге келтіру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--24-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -42px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">24</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Дұрыс және бұрыс жай</p>
+                <p style="position: absolute; top: 35px; left: 80px; font-size: 24px;">бөлшектер</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.10 - дұрыс және бұрыс бөлшектерді</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">ажырату</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--25-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -44px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">25</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Аралас сандар</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.1.11 - аралас сан анықтамасын білу</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+            <!--26-->
+            <div style="position: relative; height: 150px; width: 1400px; left: -2px; top: -46px; border: 2px solid black;">
+                <p style="position: absolute; top: 0px; left: 15px; font-size: 34px;">26</p>
+                <p style="position: absolute; top: px; left: 80px; font-size: 24px;">Аралас сандар</p>
+                <p style="position: absolute; top: 0px; left: 410px; font-size: 24px;">5.1.2.13 - бұрыс бөлшекті</p>
+                <p style="position: absolute; top: 35px; left: 410px; font-size: 24px;">аралас санға және аралас санды бұрыс</p>
+                <p style="position: absolute; top: 70px; left: 410px; font-size: 24px;">бөлшекке айналдыру</p>
+                <p style="position: absolute; top: 0px; left: 1010px; font-size: 34px;">1</p>
+                <a class="btn btn-secondary disabled" style="position: absolute; top: 10px; left: 1210px;" role="button" aria-disabled="true">Скачать</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<div style="position: relative; top: 250px; background-color: #1226de; width: 100%; height: 200px;">
+    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
+    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
+    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
+    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
+    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
+    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
+    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
+    <div style="position: relative; top: 15px;">
+        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
+        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
+        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
+        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
+        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
+        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+    </div>
+</div>
+{% endblock %}

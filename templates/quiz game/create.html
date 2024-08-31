@@ -1,0 +1,56 @@
+{% extends 'empty.html' %}
+{% load static %}
+
+{% block title %}Форма по добавлению квиз{% endblock %}
+
+{% block content %}
+{% if user.first_name == "quiz"%}
+    <div class="features">
+        <h1 style="margin-left: 38%; margin-top: 50px;">Форма по добавлению квиз</h1>
+
+        <form method="post" style="margin-left: 38%; width: 500px; margin-top: 50px;">
+            {% csrf_token %}
+            {{ form.title }}
+            <br>
+            <a href="https://wordwall.net/ru">Создать iframe</a>
+            {{ form.url }}
+            <hr>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit" style="margin-left: 40%;">Добавить квиз</button>
+        </form>
+        <div style="position: absolute; top: 20px; left: 10px; background: #f2f2f2; width: 700px; height: 900px; border-radius: 30px 30px 30px 30px;">
+            <div style="position: relative; top: 20px; left: 10px;">
+                <div>
+                    <h3 style="font-weight: bold;">iframe сілтемелерін жасау нұсқаулары:</h3>
+                    <p>1. Алдымен сіз «создать iframe» түймесін басуыңыз керек және сіз басқа сайтқа ауысасыз</p>
+                    <p>2. Басқа сайтта жаңа тіркелгі жасау керек</p>
+                    <p>3. Содан кейін квиз жасаңыз</p>
+                    <p>4. Квизды жасағаннан кейін «внедрить» түймесін басып, оның src ішіндегі бөлігін көшіріңіз</p>
+                    <img src="{% static 'main/img/instrucia.png' %}" alt="screen">
+                </div>
+                <br><br>
+                <div>
+                    <h3 style="font-weight: bold;">Инструкция по созданию iframe ссылок:</h3>
+                    <p>1. Сначала нужно нажать на кнопку «создать iframe» и вас перекинеть на другой сайт</p>
+                    <p>2. На другом сайте вы должны создать новый аккаунт</p>
+                    <p>3. Затем создайте квиз</p>
+                    <p>4. После того как вы создали квиз нажмите на «внедрить» и скопируйте часть где находится внутри src</p>
+                    <img src="{% static 'main/img/instrucia.png' %}" alt="screen">
+                </div>
+            </div>
+        </div>
+        <div class="card border-danger mb-3" style="max-width: 18rem; position: relative; top: -500px; left: 1500px;">
+          <div class="card-body text-danger">
+              <h5 class="card-title">Ескерту:</h5>
+              <p class="card-text">Егер сілтеме қате енгізілсе ол жұмыс істемейді</p>
+              <p class="card-text">«Игра, класс, предмет» пішінінде атауды қате жазсаңыз, ол 48 сағат ішінде жойылады</p>
+          </div>
+            <div class="card-body text-danger">
+                <h5 class="card-title">Предупреждение:</h5>
+                <p class="card-text">Если ссылку неправильно вставить то оно не будеть работать</p>
+                <p class="card-text">Если неправильно написать имя по форме «Игра, класс, предмет» то оно будет удалено в течение 48 часов</p>
+          </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

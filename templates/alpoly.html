@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Алгебра{% endblock %}
+
+{% block content %}
+    <br>
+    <h1 style="text-align: center;">Алгебра</h1>
+    <hr>
+    <div class="btn-group" role="group" aria-label="Default button group" style="position: relative; left: 10px;">
+      <a type="button" class="btn btn-outline-primary" href="{% url 'geopoly' %}">Геометрия</a>
+      <a type="button" class="btn btn-primary" href="{% url 'alpoly' %}">Алгебра</a>
+    </div>
+    <a href="{% url '10' %}" type="button" class="btn btn-outline-primary" style="position: relative; left: 20px;">Пәндер</a>
+{% endblock %}

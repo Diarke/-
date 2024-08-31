@@ -1,0 +1,366 @@
+{% extends 'empty.html' %}
+{% load static %}
+
+{% block title %}Тест за 5 - класс{% endblock %}
+
+{% block content %}
+    <style>
+        /* Стили для контейнера теста */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1700px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h2 {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .radio-button {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #0077ff;
+            margin-right: 10px;
+            position: relative;
+            cursor: pointer;
+            vertical-align: middle;
+            line-height: 30px;
+            text-align: center;
+            background-color: transparent;
+        }
+        .radio-button::before {
+            content: attr(data-label);
+            color: #0077ff;
+            font-size: 14px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .options input[type="radio"]:checked + .radio-button {
+            background-color: #0077ff;
+            border-color: #0077ff;
+        }
+        .options input[type="radio"]:checked + .radio-button::before {
+            color: #fff;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-group button {
+            padding: 7px 10px;
+            background-color: #0077ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        .button-group button:hover {
+            background-color: #006fed;
+        }
+        #result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #result h3 {
+            margin-bottom: 10px;
+        }
+        #result .correct {
+            color: #09ff00;
+        }
+        #result .incorrect {
+            color: red;
+        }
+        #allAnswers {
+            display: none;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        /* Стили для панели навигации */
+        .question-numbers a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-decoration: none;
+            border: 2px solid #0077ff;
+            position: relative;
+            cursor: pointer;
+            vertical-align: middle;
+            line-height: 30px;
+            text-align: center;
+            background-color: transparent;
+            margin-bottom: 10px; /* добавляем небольшой вертикальный отступ между цифрами */
+        }
+        .navbar a.active {
+            background-color: #0077ff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Контейнер с тестом и панелью навигации -->
+<div class="container">
+    <a href="{% url '5' %}" class="btn btn-outline-primary">Тесттен шығып кету</a>
+    <h1>Тест за 5 - класс</h1>
+    <div class="navbar">
+        <div class="question-numbers">
+            <a href="#" onclick="showQuestion(1)" class="active">1</a>
+            <a href="#" onclick="showQuestion(2)">2</a>
+            <a href="#" onclick="showQuestion(3)">3</a>
+        </div>
+    </div>
+
+    <div class="question" id="question1">
+        <h2>Что такое HTML?</h2>
+        <div class="options">
+            <label><input type="radio" name="q1" value="a"> <span class="radio-button" data-label="A"></span> Hyper Text Markup Language</label>
+            <label><input type="radio" name="q1" value="b"> <span class="radio-button" data-label="B"></span> Hyperlinks and Text Markup Language</label>
+            <label><input type="radio" name="q1" value="c"> <span class="radio-button" data-label="C"></span> Home Tool Markup Language</label>
+        </div>
+    </div>
+    <div class="question" id="question2" style="display:none;">
+        <h2>Что такое CSS?</h2>
+        <div class="options">
+            <label><input type="radio" name="q2" value="a"> <span class="radio-button" data-label="A"></span> Computer Style Sheets</label>
+            <label><input type="radio" name="q2" value="b"> <span class="radio-button" data-label="B"></span> Cascading Style Sheets</label>
+            <label><input type="radio" name="q2" value="c"> <span class="radio-button" data-label="C"></span> Creative Style Sheets</label>
+        </div>
+    </div>
+    <div class="question" id="question3" style="display:none;">
+        <h2>Какие языки программирования используются для веб-разработки?</h2>
+        <div class="options">
+            <label><input type="radio" name="q3" value="a"> <span class="radio-button" data-label="A"></span> HTML и CSS</label>
+            <label><input type="radio" name="q3" value="b"> <span class="radio-button" data-label="B"></span> JavaScript и Python</label>
+            <label><input type="radio" name="q3" value="c"> <span class="radio-button" data-label="C"></span> C++ и Java</label>
+        </div>
+    </div>
+    <div class="button-group">
+        <button id="prevButton" onclick="prevQuestion()" style="display: none;">Назад</button>
+        <button id="nextButton" onclick="nextQuestion()">Далее</button>
+        <button id="submitButton" onclick="submitQuiz()">Проверить ответы</button>
+        <button id="showAnswersButton" onclick="showAllAnswers()" style="display: none;">Показать ответы</button>
+    </div>
+
+    <div id="result" style="display: none;">
+        <h3>Результаты</h3>
+        <div id="q1result"></div>
+        <div id="q2result"></div>
+        <div id="q3result"></div>
+    </div>
+
+    <div id="allAnswers">
+        <h3>Правильные и неправильные ответы</h3>
+        <table>
+            <tr>
+                <th>Вопрос</th>
+                <th>Ответ</th>
+                <th>Результат</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    var currentQuestion = 1;
+    var totalQuestions = 3;
+
+    function showQuestion(questionNumber) {
+        // Скрываем все вопросы
+        document.querySelectorAll('.question').forEach(function(question) {
+            question.style.display = 'none';
+        });
+        // Показываем выбранный вопрос
+        document.getElementById('question' + questionNumber).style.display = 'block';
+        // Убираем выделение со всех кнопок в панели навигации
+        document.querySelectorAll('.navbar a').forEach(function(link) {
+            link.classList.remove('active');
+        });
+        // Выделяем активную кнопку в панели навигации
+        document.querySelector('.navbar a:nth-child(' + questionNumber + ')').classList.add('active');
+
+        // Показываем/скрываем кнопки "Назад" и "Далее" в зависимости от текущего вопроса
+        if (questionNumber === 1) {
+            document.getElementById('prevButton').style.display = 'none';
+        } else {
+            document.getElementById('prevButton').style.display = 'inline-block';
+        }
+
+        if (questionNumber === totalQuestions) {
+            document.getElementById('nextButton').style.display = 'none';
+            document.getElementById('submitButton').style.display = 'inline-block';
+        } else {
+            document.getElementById('nextButton').style.display = 'inline-block';
+            document.getElementById('submitButton').style.display = 'none';
+        }
+    }
+
+    function nextQuestion() {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+    }
+
+    function prevQuestion() {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+    }
+
+    function submitQuiz() {
+        var q1Answer = document.querySelector('input[name="q1"]:checked');
+        var q2Answer = document.querySelector('input[name="q2"]:checked');
+        var q3Answer = document.querySelector('input[name="q3"]:checked');
+
+        var q1Result = document.getElementById('q1result');
+        var q2Result = document.getElementById('q2result');
+        var q3Result = document.getElementById('q3result');
+
+        var correctAnswers = 0;
+
+        if (q1Answer) {
+            if (q1Answer.value === 'a') {
+                q1Result.textContent = 'Вопрос 1: Правильно!';
+                q1Result.classList.add('correct');
+                correctAnswers++;
+            } else {
+                q1Result.textContent = 'Вопрос 1: Неправильно. Правильный ответ: A';
+                q1Result.classList.add('incorrect');
+            }
+        }
+
+        if (q2Answer) {
+            if (q2Answer.value === 'b') {
+                q2Result.textContent = 'Вопрос 2: Правильно!';
+                q2Result.classList.add('correct');
+                correctAnswers++;
+            } else {
+                q2Result.textContent = 'Вопрос 2: Неправильно. Правильный ответ: B';
+                q2Result.classList.add('incorrect');
+            }
+        }
+
+        if (q3Answer) {
+            if (q3Answer.value === 'a') {
+                q3Result.textContent = 'Вопрос 3: Правильно!';
+                q3Result.classList.add('correct');
+                correctAnswers++;
+            } else {
+                q3Result.textContent = 'Вопрос 3: Неправильно. Правильный ответ: A';
+                q3Result.classList.add('incorrect');
+            }
+        }
+
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('nextButton').style.display = 'none';
+        document.getElementById('submitButton').style.display = 'none';
+        document.getElementById('showAnswersButton').style.display = 'inline-block';
+
+        var resultText = document.createElement('p');
+        resultText.textContent = 'Ответы: ' + correctAnswers + '/' + totalQuestions;
+        document.querySelector('.container').appendChild(resultText);
+
+        if (correctAnswers === totalQuestions) {
+            document.getElementById('submitButton').style.backgroundColor = 'green';
+        }
+
+        // Запрещаем изменение ответов после проверки
+        document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+            radio.disabled = true;
+        });
+    }
+
+    function showAllAnswers() {
+        var allAnswersTable = document.querySelector('#allAnswers table');
+        allAnswersTable.innerHTML = '';
+        var tableHead = "<tr><th>Вопрос</th><th>Ответ</th><th>Результат</th></tr>";
+        allAnswersTable.innerHTML += tableHead;
+
+        document.querySelectorAll('.question').forEach(function(question, index) {
+            var questionText = index + 1; // Заменяем текст на цифру в панели навигации
+            var answer = question.querySelector('input[name="q' + (index + 1) + '"]:checked');
+            var correctAnswer = ''; // Переменная для хранения правильного ответа
+            var correctResult = ''; // Переменная для хранения результата (правильно/неправильно)
+
+            // Устанавливаем правильный ответ и результат для каждого вопроса
+            switch (index + 1) {
+                case 1:
+                    correctAnswer = 'a';
+                    break;
+                case 2:
+                    correctAnswer = 'b';
+                    break;
+                case 3:
+                    correctAnswer = 'a';
+                    break;
+                default:
+                    break;
+            }
+
+            // Проверяем, выбран ли ответ и сравниваем его с правильным ответом
+            if (answer) {
+                correctResult = answer.value === correctAnswer ? 'Правильно' : 'Неправильно';
+            } else {
+                correctResult = 'Ответ не выбран';
+            }
+
+            // Создаем строку для таблицы с информацией о вопросе, ответе и результате
+            var row = "<tr><td>" + questionText + "</td><td>" + (answer ? answer.parentElement.textContent.trim() : "Ответ не выбран") + "</td><td class='" + (correctResult === 'Правильно' ? 'correct' : 'incorrect') + "'>" + correctResult + "</td></tr>";
+
+            // Добавляем строку в таблицу
+            allAnswersTable.innerHTML += row;
+        });
+
+        // Показываем контейнер с ответами
+        document.getElementById('allAnswers').style.display = 'block';
+    }
+
+    showQuestion(currentQuestion);
+</script>
+
+</body>
+
+{% endblock %}

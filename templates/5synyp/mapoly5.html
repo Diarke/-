@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Математика{% endblock %}
+
+{% block content %}
+<br>
+<h1 style="text-align: center;">Математика</h1>
+<br>
+<div class="btn-group" role="group" aria-label="Default button group" style="position: relative; left: 20px;">
+    <a type="button" class="btn btn-primary" href="#">Тегін (4)</a>
+    <a type="button" class="btn btn-outline-primary" href="#">Ақылы (28)</a>
+</div>
+<a href="{% url '5' %}" type="button" class="btn btn-outline-primary" style="position: relative; left: 30px;">Пәндер</a>
+{% if '5' in user.last_name %}
+<div class="style1" style="position: relative; top: 50px; left: 20px;">
+    <p style="position: relative; top: 30px; left: 35px; font-size: 25px; color: #456aff;">Көпбұрыштар. Тест 1</p>
+    <div style="position: relative; top: 30px; left: 33px; width: 110px; height: 30px; border-radius: 10px 10px 10px 10px; background: #ffcffe;">
+        <p style="position: relative; top: 2px; left: 10px; color: #bc21db;">Математика</p>
+        <p style="position: relative; top: -38px; left: 135px; font-size: 17px;"><i class="fas fa-users"></i> 5 - сынып</p>
+        <p style="position: relative; top: -78px; left: 260px; font-size: 17px;">Қазақша</p>
+    </div>
+    <div class="d-grid gap-2 col-10 mx-auto">
+        <a href="{% url 'test' %}" type="button" class="btn btn-primary" style="position: relative; top: 50px; left: 0px;">Тест өту</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

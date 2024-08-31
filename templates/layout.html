@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <img src="{% static 'main/img/result.png' %}" alt="Logo">
+        <div class="username">
+            <a href="{% url 'kbnt' %}" style="position: absolute; top: 30px; left: 1800px;"><img src="{% static 'main/img/profile.png' %}" alt="profile_icon" style="width: 70px;"></a>
+        </div>
+        <nav>
+            <a href="{% url 'synyptar' %}" style="position: absolute; left: 535px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Анимация</a>
+            <a href="{% url 'kornekilik' %}" style="position: absolute; left: 730px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Көрнекіліктер</a>
+            <a href="#" style="position: absolute; left: 950px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Тест</a>
+            <a href="{% url '1' %}" style="position: absolute; left: 1060px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Басты бет</a>
+            <a href="{% url 'preza' %}" style="position: absolute; top: 16px; left: 1250px; text-decoration: none; color: #000; font-size: 24px;">Презентация</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,235 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Онлайн тақталар{% endblock %}
+
+{% block content %}
+{% if user.subscribe_date|date:"Y-m-d" >= user.last_login|date:"Y-m-d" %}
+<h1 style="position: absolute; top: 100px; left: 770px;">ОНЛАЙН ТАҚТАЛАР</h1>
+<!--1-->
+<div class="card" style="width: 18rem; position: absolute; top: 200px; left: 330px;">
+  <img src="{% static 'main/img/Gynzy-logo.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Gynzy</h5>
+    <p class="card-text">Тіркеу қажет, Ақылы</p>
+    <a href="https://www.gynzy.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--2-->
+<div class="card" style="width: 18rem; position: absolute; top: 200px; left: 660px;">
+  <img src="{% static 'main/img/AwwApp_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Aww App</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://awwapp.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--3-->
+<div class="card" style="width: 18rem; position: absolute; top: 200px; left: 990px;">
+  <img src="{% static 'main/img/Educreations_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Educreations</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <a href="https://www.educreations.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--4-->
+<div class="card" style="width: 18rem; position: absolute; top: 200px; left: 1320px;">
+  <img src="{% static 'main/img/Miro-icon.jpg' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Miro</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <a href="https://miro.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--5-->
+<div class="card" style="width: 18rem; position: absolute; top: 580px; left: 330px;">
+  <img src="{% static 'main/img/Trello_icon.jpg' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Trello</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <a href="https://trello.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--6-->
+<div class="card" style="width: 18rem; position: absolute; top: 580px; left: 660px;">
+  <img src="{% static 'main/img/Bubbl.us_icon.jpg' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Bubble.us</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://bubbl.us" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--7-->
+<div class="card" style="width: 18rem; position: absolute; top: 580px; left: 990px;">
+  <img src="{% static 'main/img/Jamboard_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Jamboard</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://edu.google.com/intl/ALL_us/products/jamboard/" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--8-->
+<div class="card" style="width: 18rem; position: absolute; top: 580px; left: 1320px;">
+  <img src="{% static 'main/img/Classroomscreen_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Classroomscreen</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <a href="https://classroomscreen.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--9-->
+<div class="card" style="width: 18rem; position: absolute; top: 960px; left: 330px;">
+  <img src="{% static 'main/img/conceptboard_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Conceptboard</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <a href="https://conceptboard.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--10-->
+<div class="card" style="width: 18rem; position: absolute; top: 960px; left: 660px;">
+  <img src="{% static 'main/img/Ziteboard_icon.jpg' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Ziteboard</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://ziteboard.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--11-->
+<div class="card" style="width: 18rem; position: absolute; top: 960px; left: 990px;">
+  <img src="{% static 'main/img/idroo_icon.jpg' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">iDroo</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://idroo.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--12-->
+<div class="card" style="width: 18rem; position: absolute; top: 960px; left: 1320px;">
+  <img src="{% static 'main/img/oodlu_icon.jpg' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Oodlu</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <a href="https://www.oodlu.org" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--13-->
+<div class="card" style="width: 18rem; position: absolute; top: 1340px; left: 330px;">
+  <img src="{% static 'main/img/quizwhizzer_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">QuizWhizzer</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <a href="https://www.quizwhizzer.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--14-->
+<div class="card" style="width: 18rem; position: absolute; top: 1340px; left: 660px;">
+  <img src="{% static 'main/img/Wordwall_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Wordwall</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://wordwall.net" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--15-->
+<div class="card" style="width: 18rem; position: absolute; top: 1340px; left: 990px;">
+  <img src="{% static 'main/img/Baamboozle_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Baamboozle</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://www.baamboozle.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--16-->
+<div class="card" style="width: 18rem; position: absolute; top: 1340px; left: 1320px;">
+  <img src="{% static 'main/img/blooket_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Blooket</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <a href="https://www.blooket.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--17-->
+<div class="card" style="width: 18rem; position: absolute; top: 1720px; left: 330px;">
+  <img src="{% static 'main/img/ClassTools_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">ClassTools</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <a href="https://www.classtools.net" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--18-->
+<div class="card" style="width: 18rem; position: absolute; top: 1720px; left: 660px;">
+  <img src="{% static 'main/img/PurposeGames_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">PurposeGames</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://www.purposegames.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--19-->
+<div class="card" style="width: 18rem; position: absolute; top: 1720px; left: 990px;">
+  <img src="{% static 'main/img/StudyStack_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">StudyStack</h5>
+    <p class="card-text">Тіркеу қажет емес, Тегін</p>
+    <p class="card-text"></p>
+    <a href="https://www.studystack.com" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<!--20-->
+<div class="card" style="width: 18rem; position: absolute; top: 1720px; left: 1320px;">
+  <img src="{% static 'main/img/lumio_icon.png' %}" class="card-img-top" alt="Gynzy-logo" style="height: 201px;">
+  <div class="card-body">
+    <h5 class="card-title">Lumio by SMART</h5>
+    <p class="card-text">Тіркеу қажет, Тегін</p>
+    <a href="https://lum.io" class="btn btn-primary">Ашу</a>
+  </div>
+</div>
+<div style="position: relative; top: 2200px; background-color: #1226de; width: 100%; height: 200px;">
+    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
+    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
+    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
+    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
+    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
+    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
+    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
+    <div style="position: relative; top: 15px;">
+        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
+        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
+        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
+        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
+        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
+        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+    </div>
+</div>
+{% elif user.subscribe_date|date:"Y-m-d" <= user.last_login|date:"Y-m-d" %}
+<h1 style="position: absolute; top: 250px; left: 250px;">Онлайн тақталарды пайдалану үшін сізге <a href="http://wa.me/77066652841">АДМИНИСТРАТОР</a> рұқсаты керек</h1>
+<div style="position: relative; top: 800px; background-color: #1226de; width: 100%; height: 200px;">
+    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
+    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
+    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
+    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
+    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
+    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
+    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
+    <div style="position: relative; top: 15px;">
+        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
+        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
+        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
+        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
+        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
+        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'empty.html' %}
+{% load static %}
+
+{% block title %}Жай бөлшектерді ортақ бөлімге келтіру{% endblock %}
+
+{% block content %}
+{% if user.subscribe_date|date:"Y-m-d" >= user.last_login|date:"Y-m-d" %}
+    <div style="position: absolute; top: 20px; left: 50px;">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url '1' %}">Басты бет</a></li>
+            <li class="breadcrumb-item"><a href="{% url '5' %}">5 - сынып</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Жай бөлшектерді ортақ бөлімге келтіру</li>
+          </ol>
+        </nav>
+    </div>
+    <div style="position: absolute; top: 70px; left: 350px;">
+        <iframe src="https://www.geogebra.org/classic/?embed" width="1200" height="700" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+    </div>
+{% endif %}
+{% endblock %}
