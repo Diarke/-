@@ -3,23 +3,56 @@
 
 {% block title %}Login{% endblock %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'users/register.css' %}">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+{% endblock %}
+
 {% block content %}
-    {% if form.errors %}
-        <p style="text-align: center;">{{ form.errors.error }}</p>
-    {% endif %}
-<img src="{% static 'main/img/math.jpg' %}" alt="math" style="position: absolute;width: 100%; height: 945px;filter: blur(6px);">
-<div style="background-color: #ebebeb; width: 420px; height: 460px; position: absolute; top: 90px; left: 750px;border-radius: 30px 30px 30px 30px;-moz-box-shadow: 0 0 6px #000;-webkit-box-shadow: 0 0 6px #000;transition: all 0.3s ease-out;"></div>
-    <form action="{% url 'login' %}" method="post" style="text-align: center; top: 100px; position: relative;">
-        <br>
-        <h1 style="text-align: center;">Кіру</h1>
-        <br>
-        <p style="position: relative; left: -75px;">Пайдаланушының аты</p>
-        {{ form.username }}<br><br>
-        <p style="position: relative; left: -125px;">Құпиясөз</p>
-        {{ form.password }}<br><br>
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary" style="position: relative; left: 190px;">Кіру</button>
-        <a href="{% url 'password_reset' %}" style="position: relative; left: 56px; top: 45px; text-decoration: none;">Құпия сөзді ұмыттыңыз ба?</a>
-        <a href="{% url 'register' %}" style="position: relative; left: -127px; top: 80px; text-decoration: none;">Тіркелген жоқсыз ба?</a>
-    </form>
+<style>
+    body {
+        background-image: url("/static/main/img/math.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .form .field {
+    position: relative;
+    margin-top: 10px;
+    border-radius: 6px;
+    }
+</style>
+<div class="form signup container">
+    <div class="form-content" style="display: flex; justify-content: center; margin-top: 150px;">
+        <div style="background-color: #ebebeb; width: 420px; height: 480px; display: flex; justify-content: center; border-radius: 30px 30px 30px 30px; -moz-box-shadow: 0 0 6px #000;-webkit-box-shadow: 0 0 6px #000;transition: all 0.3s ease-out;">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center; margin-top: 20px;">Кіру</h1>
+                <label for="username" style="margin-top: 20px;">Пайдаланушы аты</label>
+                <div class="field input-field" style="width: 350px;">
+                    <input type="text" name="username" placeholder="Пайдаланушы аты" class="form-control" required>
+                </div>
+                <br>
+                <label for="password" style="margin-top: 10px;">Құпия сөзді Растау</label>
+                <div class="field input-field">
+                    <input type="password" name="password2" placeholder="Құпия сөзді Растау" class="form-control" required>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary" style="position: relative; left: 0px; width: 350px; height: 40px;">Кіру</button>
+                <br>
+                <a href="{% url 'register' %}" class="btn btn-outline-primary" style="position: relative; left: 0px; width: 350px; height: 40px; margin-top:10px;">Тіркелу</a>
+                <br>
+                <a href="{% url 'password_reset' %}" style="position: relative; left: 80px; text-decoration: none;  top: 10px;">Құпия сөзді ұмыттыңыз ба?</a>
+                {% if error %}
+                <div class="error">
+                    {{ error }}
+                </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

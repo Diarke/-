@@ -3,34 +3,70 @@
 
 {% block title %}register{% endblock %}
 
-{% block css %}
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-{% endblock %}
 
 {% block content %}
-<img src="{% static 'main/img/math.jpg' %}" alt="math" style="position: absolute;width: 100%; height: 945px;filter: blur(6px);">
-<div style="background-color: #ebebeb; width: 420px; height: 680px; position: absolute; top: 90px; left: 750px;border-radius: 30px 30px 30px 30px;-moz-box-shadow: 0 0 6px #000;-webkit-box-shadow: 0 0 6px #000;transition: all 0.3s ease-out;"></div>
-    <form action="{% url 'register' %}" method="post" style="text-align: center; top: 100px; position: relative;">
-        {% csrf_token %}
-        {% if error %}
-           <div style="color: black; position: absolute; left: 1200px; text-decoration: none;">{{ error }}</div>
-        {% endif %}
-        <br>
-        <h1 style="text-align: center;">Тіркелу</h1>
-        <br>
-        <p style="position: relative; left: -77px;">Пайдаланушының аты</p>
-        {{ form.username }}<br><br>
-        <p style="position: relative; left: -140px;">Email</p>
-        {{ form.email }}<br><br>
-        <p style="position: relative; left: -125px;">Құпиясөз</p>
-        {{ form.password1 }}<br><br>
-        <p style="position: relative; left: -93px;">Құпиясөзді растау</p>
-        {{ form.password2 }}<br><br>
-        <div class="field input-field">
-            <input type="tel" name="phone" placeholder="Телефон номер" class="phone" required>
+<style>
+    body {
+        background-image: url("/static/main/img/math.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .form .field {
+    position: relative;
+    margin-top: 10px;
+    border-radius: 6px;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<div class="form signup container">
+    <div class="form-content" style="display: flex; justify-content: center; margin-top: 100px;">
+        <div style="background-color: #ebebeb; width: 420px; height: 700px; display: flex; justify-content: center; border-radius: 30px 30px 30px 30px; -moz-box-shadow: 0 0 6px #000;-webkit-box-shadow: 0 0 6px #000;transition: all 0.3s ease-out;">
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                   <div style="color: black; position: absolute; left: 1200px; text-decoration: none;">{{ error }}</div>
+                {% endif %}
+                <h1 style="text-align: center; margin-top: 20px;">Тіркелу</h1>
+                <label for="username" style="margin-top: 20px;">Пайдаланушы аты</label>
+                <div class="field input-field" style="width: 350px;">
+                    <input type="text" name="username" placeholder="Пайдаланушы аты" class="form-control" required>
+                </div>
+                <br>
+                <label for="email" style="margin-top: 10px;">Электрондық пошта</label>
+                <div class="field input-field">
+                    <input type="email" name="email" placeholder="Электрондық пошта" class="form-control" required>
+                </div>
+                <br>
+                <label for="password" style="margin-top: 10px;">Құпия сөз</label>
+                <div class="field input-field">
+                    <input type="password" name="password1" placeholder="Құпия сөз" class="form-control" required>
+                </div>
+                <br>
+                <label for="password" style="margin-top: 10px;">Құпия сөзді Растау</label>
+                <div class="field input-field">
+                    <input type="password" name="password2" placeholder="Құпия сөзді Растау" class="form-control" required>
+                </div>
+                <br>
+                <label for="phone" style="margin-top: 10px;">Телефон номер</label>
+                <div class="field input-field">
+                    <input type="tel" name="phone" id="phone" placeholder="Телефон номер" class="form-control phone" required>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" style="position: relative; left: 0px; width: 350px; height: 40px; margin-top: 10px;">Тіркелу</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Тіркелу</button>
-    </form>
-<script src="{% static 'main/js/register.js' %}"></script>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $(".phone").mask("+7(999)999-9999");
+    });
+</script>
 {% endblock %}
