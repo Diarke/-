@@ -13,18 +13,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     {% block css %}{% endblock %}
 </head>
+<style>
+        header {
+            background: #ffffff;
+            width: 100%;
+            height: 8vh;
+            color: #181818;
+            box-shadow: 0 0 4px #000;
+            display: flex;
+            align-items: center; /* Вертикальное выравнивание по центру */
+            position: relative; /* Убираем fixed позиционирование */
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Задаем максимальную ширину для контейнера */
+            justify-content: space-between; /* Выравниваем элементы по краям */
+            padding: 0 10px; /* Добавляем отступы по бокам */
+            margin: 0 auto; /* Центрирование навигации по горизонтали */
+        }
+        .logo {
+            width: 150px;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            margin: 0 10px; /* Добавляем отступы между ссылками */
+        }
+        .username {
+            display: flex;
+            align-items: center;
+        }
+        .profile-icon {
+            width: 70px;
+        }
+</style>
 <body>
     <header>
-        <img src="{% static 'main/img/result.png' %}" alt="Logo">
-        <div class="username">
-            <a href="{% url 'kbnt' %}" style="position: absolute; top: 30px; left: 1800px;"><img src="{% static 'main/img/profile.png' %}" alt="profile_icon" style="width: 70px;"></a>
-        </div>
-        <nav>
-            <a href="{% url 'synyptar' %}" style="position: absolute; left: 535px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Анимация</a>
-            <a href="{% url 'kornekilik' %}" style="position: absolute; left: 730px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Көрнекіліктер</a>
-            <a href="#" style="position: absolute; left: 950px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Тест</a>
-            <a href="{% url '1' %}" style="position: absolute; left: 1060px; top: 17px; text-decoration: none; color: #000; font-size: 24px;">Басты бет</a>
-            <a href="{% url 'preza' %}" style="position: absolute; top: 16px; left: 1250px; text-decoration: none; color: #000; font-size: 24px;">Презентация</a>
+        <nav class="navbar">
+            <div class="nav-center">
+                <img src="{% static 'main/img/result.png' %}" class="logo" alt="Logo" style="margin-top: -20px;">
+            </div>
+            <a href="{% url 'synyptar' %}" class="nav-link">Анимация</a>
+            <a href="{% url 'kornekilik' %}" class="nav-link">Көрнекіліктер</a>
+            <a href="#" class="nav-link">Тест</a>
+            <a href="{% url '1' %}" class="nav-link">Басты бет</a>
+            <a href="{% url 'preza' %}" class="nav-link">Презентация</a>
+            <div class="username">
+                <a href="{% url 'kbnt' %}"><img src="{% static 'main/img/profile.png' %}" alt="profile_icon" class="profile-icon"></a>
+            </div>
         </nav>
     </header>
     <main>

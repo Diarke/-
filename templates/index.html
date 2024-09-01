@@ -5,117 +5,211 @@
 
 {% block content %}
 <style>
-    .mainmenu {
-        position: relative;
-        height: 320px;
-        width: 360px;
-        background: #ffffff;
-        -moz-box-shadow: 0 0 4px #000;
-        -webkit-box-shadow: 0 0 4px #000;
-        box-shadow: 0 0 4px #000;
-        border-radius: 10px 10px 10px 10px;
-        justify-content: space-around;
-    }
-</style>
-<div style="position: relative; top: 0px;">
-    <!--1-->
-    <div class="mainmenu" style="top: 150px; left: 400px; position: absolute;">
-        <a href="{% url 'synyptar' %}" style="text-decoration: none;">
-            <img src="{% static 'main/img/Animatia.jpg' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">Анимация</h4>
-            <div style="position: relative; top: -100px; left: 70px; width: 235px; height: 60px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px;"></div>
-            <h4 style="position: relative; text-decoration: none; top: -150px; left: 85px; color: #fff;font-size: 33px;font-weight: bold;">АНИМАЦИЯ</h4>
-        </a>
-    </div>
-    <!--2-->
-    <div class="mainmenu" style="top: 150px; left: 800px; position: absolute;">
-        <a href="{% url 'synypsq' %}" style="text-decoration: none;">
-            <img src="{% static 'main/img/books1.png' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px; filter: brightness(1.1); filter: contrast(105%);">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">ҚМЖ, ҰМЖ</h4>
-            <div style="position: relative; top: -100px; left: 90px; width: 202px; height: 60px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px; filter: brightness(1.1); filter: contrast(105%);"></div>
-            <h4 style="position: relative; text-decoration: none; top: -153px; left: 95px; color: #fff;font-size: 34px;font-weight: bold;">ҚМЖ/ҰМЖ</h4>
-        </a>
-    </div>
-    <!--3-->
-    <div class="mainmenu" style="top: 150px; left: 1200px; position: absolute;">
-        <a href="{% url 'preza' %}" style="text-decoration: none;">
-            <img src="{% static 'main/img/prezent.jpg' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">Презентация</h4>
-            <div style="position: relative; top: -100px; left: 50px; width: 270px; height: 60px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px; filter: brightness(1.1); filter: contrast(105%);"></div>
-            <h4 style="position: relative; text-decoration: none; top: -150px; left: 60px; color: #fff;font-size: 34px;font-weight: bold;">ПРЕЗЕНТАЦИЯ</h4>
-        </a>
-    </div>
-    <!--4-->
-    <div class="mainmenu" style="top: 500px; left: 400px; position: absolute;">
-        <a href="{% url 'quiz' %}" style="text-decoration: none;">
-            <img src="{% static 'main/img/kviz.jpg' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">Квиз ойындары</h4>
-        </a>
-    </div>
-    <!--5-->
-    <div class="mainmenu" style="top: 500px; left: 800px; position: absolute;">
-        <a href="{% url 'onlinetaq' %}" style="text-decoration: none;">
-            <img src="{% static 'main/img/olinetaqta.jpg' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">Онлайн тақталар</h4>
-            <div style="position: relative; top: -110px; left: 70px; width: 230px; height: 80px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px;"></div>
-            <h4 style="position: relative; text-decoration: none; top: -180px; left: 10px; color: #fff;font-size: 28px;font-weight: bold; text-align: center;">ОНЛАЙН</h4>
-            <h4 style="position: relative; text-decoration: none; top: -190px; left: 10px; color: #fff;font-size: 28px;font-weight: bold; text-align: center;">ТАҚТАЛАР</h4>
-        </a>
-    </div>
-    <!--6-->
-    <div class="mainmenu" style="top: 500px; left: 1200px; position: absolute;">
-        <a href="{% url 'kornekilik' %}" style="text-decoration: none;">
-            <img src="{% static 'main/img/classroom.jpg' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">Көрнекіліктер</h4>
-            <div style="position: relative; top: -100px; left: 31px; width: 310px; height: 60px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px;"></div>
-            <h4 style="position: relative; text-decoration: none; top: -155px; left: 40px; color: #fff;font-size: 38px;font-weight: bold;">КӨРНЕКІЛІКТЕР</h4>
-        </a>
-    </div>
-    <!--7-->
-    <div class="mainmenu" style="top: 850px; left: 400px; position: absolute;">
-        <a href="#" style="text-decoration: none;">
-            <img src="{% static 'main/img/Test-maker.png' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">Тақырыптық тапсырмалар</h4>
-            <div style="position: relative; top: -110px; left: 60px; width: 250px; height: 80px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px;"></div>
-            <h4 style="position: relative; text-decoration: none; top: -180px; left: 5px; color: #fff;font-size: 28px;font-weight: bold; text-align: center;">ТАҚЫРЫПТЫҚ</h4>
-            <h4 style="position: relative; text-decoration: none; top: -190px; left: 5px; color: #fff;font-size: 28px;font-weight: bold; text-align: center;">ТАПСЫРМАЛАР</h4>
-        </a>
-    </div>
-    <!--8-->
-    <div class="mainmenu" style="top: 850px; left: 800px; position: absolute;">
-        <a href="#" style="text-decoration: none;">
-            <img src="{% static 'main/img/olimp.jpg' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">Олимпиада есептері</h4>
-            <div style="position: relative; top: -110px; left: 70px; width: 230px; height: 80px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px;"></div>
-            <h4 style="position: relative; text-decoration: none; top: -180px; left: 10px; color: #fff;font-size: 28px;font-weight: bold; text-align: center;">ОЛИМПИАДА</h4>
-            <h4 style="position: relative; text-decoration: none; top: -190px; left: 10px; color: #fff;font-size: 28px;font-weight: bold; text-align: center;">ЕСЕПТЕРІ</h4>
-        </a>
-    </div>
-    <!--9-->
-    <div class="mainmenu" style="top: 850px; left: 1200px; position: absolute;">
-        <a href="#" style="text-decoration: none;">
-            <img src="{% static 'main/img/books2.jpg' %}" alt="books" style="position: relative; width: 350px; left: 5px; top: 70px;border-radius: 10px 10px 10px 10px;">
-            <h4 style="position: relative; top: -200px; left: 10px; color: #000; -webkit-text-stroke: 0.5px #000;">БЖБ, ТЖБ</h4>
-            <div style="position: relative; top: -100px; left: 91px; width: 200px; height: 60px; background: #000; opacity: 0.7; border-radius: 10px 10px 10px 10px; filter: brightness(1.1); filter: contrast(105%);"></div>
-            <h4 style="position: relative; text-decoration: none; top: -153px; left: 97px; color: #fff;font-size: 38px;font-weight: bold;">БЖБ/ТЖБ</h4>
-        </a>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .mainmenu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .mainmenu {
+            position: relative;
+            width: 350px;
+            margin: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            transition: box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mainmenu img {
+            width: 100%;
+            border-radius: 10px;
+            transition: filter 0.3s ease;
+        }
+
+        .mainmenu h4 {
+            margin: 0;
+            padding: 10px;
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .mainmenu .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mainmenu:hover .overlay {
+            opacity: 1;
+        }
+
+        .mainmenu:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .mainmenu a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .mainmenu-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+<div class="mainmenu-container">
+    <div class="mainmenu-container">
+        <!--1-->
+        <div class="mainmenu">
+            <a href="{% url 'synyptar' %}">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/Animatia.jpg' %}" alt="Анимация">
+                    <h4>АНИМАЦИЯ</h4>
+                </div>
+            </a>
+        </div>
+        <!--2-->
+        <div class="mainmenu">
+            <a href="{% url 'synypsq' %}">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/books1.png' %}" alt="ҚМЖ, ҰМЖ">
+                    <h4>ҚМЖ/ҰМЖ</h4>
+                </div>
+            </a>
+        </div>
+        <!--3-->
+        <div class="mainmenu">
+            <a href="{% url 'preza' %}">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/prezent.jpg' %}" alt="Презентация">
+                    <h4>ПРЕЗЕНТАЦИЯ</h4>
+                </div>
+            </a>
+        </div>
+        <!--4-->
+        <div class="mainmenu">
+            <a href="{% url 'quiz' %}">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/kviz.jpg' %}" alt="Квиз ойындары">
+                    <h4>Квиз ойындары</h4>
+                </div>
+            </a>
+        </div>
+        <!--5-->
+        <div class="mainmenu">
+            <a href="{% url 'onlinetaq' %}">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/olinetaqta.jpg' %}" alt="Онлайн тақталар">
+                    <h4>ОНЛАЙН<br>ТАҚТАЛАР</h4>
+                </div>
+            </a>
+        </div>
+        <!--6-->
+        <div class="mainmenu">
+            <a href="{% url 'kornekilik' %}">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/classroom.jpg' %}" alt="Көрнекіліктер">
+                    <h4>КӨРНЕКІЛІКТЕР</h4>
+                </div>
+            </a>
+        </div>
+        <!--7-->
+        <div class="mainmenu">
+            <a href="#">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/Test-maker.png' %}" alt="Тақырыптық тапсырмалар">
+                    <h4>ТАҚЫРЫПТЫҚ<br>ТАПСЫРМАЛАР</h4>
+                </div>
+            </a>
+        </div>
+        <!--8-->
+        <div class="mainmenu">
+            <a href="#">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/olimp.jpg' %}" alt="Олимпиада есептері">
+                    <h4>ОЛИМПИАДА<br>ЕСЕПТЕРІ</h4>
+                </div>
+            </a>
+        </div>
+        <!--9-->
+        <div class="mainmenu">
+            <a href="#">
+                <div class="overlay"></div>
+                <div class="mainmenu-content">
+                    <img src="{% static 'main/img/books2.jpg' %}" alt="БЖБ, ТЖБ">
+                    <h4>БЖБ/ТЖБ</h4>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
-<div style="position: relative; top: 1250px; background-color: #1226de; width: 100%; height: 200px;">
-    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
-    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
-    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
-    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
-    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
-    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
-    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
-    <div style="position: relative; top: 15px;">
-        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
-        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
-        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
-        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
-        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
-        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+    <div class="header-container">
+        <!-- Первая колонка -->
+        <div class="column">
+            <h1 class="header-title">Mathem</h1>
+            <a href="http://wa.me/77083387108" style="text-decoration: none; color: #fff">Разработчик</a>
+            <a href="http://wa.me/77066652841" style="text-decoration: none; color: #fff">Администратор</a>
+        </div>
+
+        <!-- Вторая колонка -->
+        <div class="nav-links">
+            <a href="{% url '1' %}">Басты бет</a>
+            <a href="{% url 'synyptar' %}">Анимация</a>
+            <a href="{% url 'quiz' %}">Квиз ойындары</a>
+            <a href="{% url 'onlinetaq' %}">Онлайн тақталар</a>
+        </div>
+
+        <!-- Третья колонка -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==">
+                <img src="{% static 'main/img/instagram.png' %}" alt="Instagram">
+                mathem.2017
+            </a>
+            <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1">
+                <img src="{% static 'main/img/tiktok.png' %}" alt="TikTok" style="width: 45px;">
+                mathem.kz
+            </a>
+            <a href="https://t.me/kzmathemkz">
+                <img src="{% static 'main/img/telegram.png' %}" alt="Telegram" style="width: 35px;">
+                mathem.chat
+            </a>
+        </div>
     </div>
-</div>
 {% endblock %}
