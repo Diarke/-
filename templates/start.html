@@ -6,19 +6,21 @@
 {% block content %}
 {% if user.is_authenticated %}
 <img src="{% static 'main/img/math0.jpg' %}" alt="math0" style="width: 100%; height: 945px;">
-<div class="container" style="text-align: center;position: absolute;top: 250px;left: 300px; font-size: 23px;color: #fff;text-shadow: #000 1px 0 10px;">
+<div class="container" style="text-align: center; justify-content: center; font-size: 23px;color: #fff;text-shadow: #000 1px 0 10px;">
     <h1 style="margin-bottom: 20px;">Маthem.2017</h1>
     <p>Математиктер (бастауыш және жоғарғы сынып) платформасы. Сіздің мектептегі жұмысыңызға қажет материалдардың барлығы, тақырып бойынша бөлініп ыңғайлы етіп қойылған.</p>
+    <a href="{% url '1' %}"><div style="text-align: center; justify-content: center; text-decoration: none; border: 2px solid blue;border-radius: 30px 30px 30px 30px;">
+        <a href="{% url '1' %}" style="font-size: 20px;text-decoration: none;">Кіру</a>
+    </div></a>
 </div>
-<a href="{% url '1' %}"><div style="position: absolute; width: 200px; height: 65px; top: 420px;left: 875px; font-size: 20px;text-decoration: none; border: 2px solid blue;border-radius: 30px 30px 30px 30px;"></div></a>
-<a href="{% url '1' %}" style="position: absolute;top: 435px;left: 950px; font-size: 20px;text-decoration: none;">Кіру</a>
 {% else %}
 <img src="{% static 'main/img/math0.jpg' %}" alt="math0" style="width: 100%; height: 945px;">
-<div class="container" style="text-align: center;position: absolute;top: 250px;left: 300px; font-size: 23px;color: #fff;text-shadow: #000 1px 0 10px;">
+<div class="container" style="text-align: center; justify-content: center; font-size: 23px;color: #fff;text-shadow: #000 1px 0 10px;">
     <h1 style="margin-bottom: 20px;">Маthem.2017</h1>
     <p>Математиктер (бастауыш және жоғарғы сынып) платформасы. Сіздің мектептегі жұмысыңызға қажет материалдардың барлығы, тақырып бойынша бөлініп ыңғайлы етіп қойылған.</p>
+    <a href="{% url 'login' %}"><div style="text-align: center; justify-content: center; text-decoration: none; border: 2px solid blue;border-radius: 30px 30px 30px 30px;">
+        <a href="{% url 'login' %}" style="font-size: 20px;text-decoration: none;">Кіру</a>
+    </div></a>
 </div>
-<a href="{% url 'login' %}"><div style="position: absolute; width: 200px; height: 65px; top: 420px;left: 875px; font-size: 20px;text-decoration: none; border: 2px solid blue;border-radius: 30px 30px 30px 30px;"></div></a>
-<a href="{% url 'login' %}" style="position: absolute;top: 435px;left: 950px; font-size: 20px;text-decoration: none;">Кіру</a>
 {% endif %}
 {% endblock %}
