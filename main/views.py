@@ -78,7 +78,7 @@ def two(request):
 
 
 def one(request):
-    return render(request, 'bastay/3synyp.html')
+    return render(request, 'bastay/1synyp.html')
 
 
 def index(request):

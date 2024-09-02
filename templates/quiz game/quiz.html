@@ -6,7 +6,10 @@
 {% block content %}
 <div style="position: absolute;">
     <div class="row row-cols-1 row-cols-md-6 g-1">
-        {% if user.username == "Porchamp"%}
+        {% if user.username == "Admin"%}
+            <a href="{% url 'create' %}" style="position: absolute; left: 90px; top: 96px; list-style: none;"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить квиз</button></li></a>
+        {% endif %}
+        {% if user.username == "Admin01"%}
             <a href="{% url 'create' %}" style="position: absolute; left: 90px; top: 96px; list-style: none;"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить квиз</button></li></a>
         {% endif %}
         {% for el in quizs %}

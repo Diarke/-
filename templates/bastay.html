@@ -4,39 +4,43 @@
 {% block title %}Бастауыш{% endblock %}
 
 {% block content %}
-<div style="position: relative; top: -50px;">
-    <div style="position: relative; background-color: #f2f2f2; width: 1300px; height: 400px; top: 100px; left: 310px; border-radius: 30px 30px 30px 30px; text-align: center;"><h1 style="position: relative; top: 20px;">Анимация</h1></div>
-    <a class="btn btn-outline-primary" href="{% url 'synyptar' %}" style="position: absolute; top: 130px; left: 330px;">Артқа</a>
-    <!--1-->
-    <div class="card" style="width: 18rem; position: absolute; top: 200px; left: 330px;">
-        <div class="card-body">
-            <h5 class="card-title">1 сынып</h5>
-            <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
-            <a href="{% url 'one' %}" class="btn btn-primary">кіру</a>
+<div style="position: relative; background-color: #f2f2f2; width: 1300px; height: 400px; margin: 50px auto; border-radius: 30px; text-align: center;">
+    <a class="btn btn-outline-primary" href="{% url 'synyptar' %}" style="position: absolute; top: 20px; left: 20px;">Артқа</a>
+
+    <h1 style="position: relative; margin-top: 60px;">Анимация</h1>
+
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 60px;">
+        <!--1-->
+        <div class="card" style="width: 18rem; text-align: left;">
+            <div class="card-body">
+                <h5 class="card-title">1 сынып</h5>
+                <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
+                <a href="{% url 'one' %}" class="btn btn-primary">кіру</a>
+            </div>
         </div>
-    </div>
-    <!--2-->
-    <div class="card" style="width: 18rem; position: absolute; top: 200px; left: 650px;">
-        <div class="card-body">
-            <h5 class="card-title">2 сынып</h5>
-            <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
-            <a href="{% url '2' %}" class="btn btn-primary">кіру</a>
+        <!--2-->
+        <div class="card" style="width: 18rem; text-align: left;">
+            <div class="card-body">
+                <h5 class="card-title">2 сынып</h5>
+                <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
+                <a href="{% url '2' %}" class="btn btn-primary">кіру</a>
+            </div>
         </div>
-    </div>
-    <!--3-->
-    <div class="card" style="width: 18rem; position: absolute; top: 200px; left: 970px;">
-        <div class="card-body">
-            <h5 class="card-title">3 сынып</h5>
-            <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
-            <a href="{% url '3' %}" class="btn btn-primary">кіру</a>
+        <!--3-->
+        <div class="card" style="width: 18rem; text-align: left;">
+            <div class="card-body">
+                <h5 class="card-title">3 сынып</h5>
+                <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
+                <a href="{% url '3' %}" class="btn btn-primary">кіру</a>
+            </div>
         </div>
-    </div>
-    <!--4-->
-    <div class="card" style="width: 18rem; position: absolute; top: 200px; left: 1290px;">
-        <div class="card-body">
-            <h5 class="card-title">4 сынып</h5>
-            <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
-            <a class="btn btn-secondary disabled" role="button" aria-disabled="true">кіру</a>
+        <!--4-->
+        <div class="card" style="width: 18rem; text-align: left;">
+            <div class="card-body">
+                <h5 class="card-title">4 сынып</h5>
+                <p class="card-text">Егер сіз осы сыныпты сатып алған болмасаңыз, онда сіз үшін тегін сабақтар бар.</p>
+                <a class="btn btn-secondary disabled" role="button" aria-disabled="true">кіру</a>
+            </div>
         </div>
     </div>
 </div>
