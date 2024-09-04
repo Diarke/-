@@ -5,373 +5,441 @@
 
 {% block content %}
 <style>
-    .mainmenu1 {
-        position: relative;
-        height: 70px;
-        width: 1450px;
-        background: #ffffff;
-        -moz-box-shadow: 0 0 2px #1226de;
-        -webkit-box-shadow: 0 0 2px #1226de;
-        box-shadow: 0 0 2px #1226de;
-        border-radius: 10px 10px 10px 10px;
-    }
-    .mainmenu2 {
-        position: relative;
-        height: 70px;
-        width: 1450px;
-        background: #ffffff;
-        -moz-box-shadow: 0 0 2px #7d7d7d;
-        -webkit-box-shadow: 0 0 2px #7d7d7d;
-        box-shadow: 0 0 2px #7d7d7d;
-        border-radius: 10px 10px 10px 10px;
-    }
+        /* Основной контейнер */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрирование по горизонтали */
+            justify-content: center; /* Центрирование по вертикали */
+            background-color: #1226de;
+            width: 1500px;
+            height: 150px;
+            border-radius: 20px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        /* Заголовок */
+        .title {
+            color: #ffffff;
+            font-size: 36px; /* Увеличенный размер заголовка */
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Контейнер для элементов в строке */
+        .items-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Отступ между элементами */
+            margin-top: 20px;
+        }
+
+        /* Блоки с названием предметов */
+        .subject-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            color: blue;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 2px #ccc;
+            height: 35px;
+            width: auto; /* Дает возможность блокам растягиваться по содержимому */
+        }
+
+        .subject-block p {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .mainmenu1 {
+            position: relative;
+            height: 70px;
+            width: 1450px;
+            background: #ffffff;
+            -moz-box-shadow: 0 0 2px #1226de;
+            -webkit-box-shadow: 0 0 2px #1226de;
+            box-shadow: 0 0 2px #1226de;
+            border-radius: 10px 10px 10px 10px;
+        }
+        .mainmenu2 {
+            position: relative;
+            height: 70px;
+            width: 1450px;
+            background: #ffffff;
+            -moz-box-shadow: 0 0 2px #7d7d7d;
+            -webkit-box-shadow: 0 0 2px #7d7d7d;
+            box-shadow: 0 0 2px #7d7d7d;
+            border-radius: 10px 10px 10px 10px;
+        }
 </style>
-<div style="position: relative; width: 1500px; height: 150px; top: 140px; left: 225px; background-color: #1226de; border-radius: 20px 20px 20px 20px;">
-    <h1 style="position: absolute; top: 20px; left: 700px; color: #ffffff;">6 - сынып</h1>
-    <div class="dropdown" style="position: relative; top: 50px; left: 20px; list-style: none;">
-        <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
-        <div class="dropdown-content">
-            <a href="{% url '6' %}"><li>Математика</li></a>
+<div class="container">
+    <h1 class="title">6 - сынып</h1>
+    <div class="items-container">
+        <div class="dropdown">
+            <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
+            <div class="dropdown-content">
+                <a href="{% url '6' %}"><li>Математика</li></a>
+            </div>
         </div>
-    </div>
-    <div style="position: relative; width: 140px; height: 35px; background-color: #ffffff; top: 7px; left: 190px; border-radius: 10px 10px 10px 10px;">
-        <p style="position: relative; top: 2px; left: 13px; font-size: 20px; color: blue">Математика</p>
-    </div>
-    <div style="position: relative; width: 125px; height: 35px; background-color: #ffffff; top: -28px; left: 390px; border-radius: 10px 10px 10px 10px;">
-        <p style="position: relative; top: 2px; left: 15px; font-size: 20px; color: blue; text-decoration: none;">Анимация</p>
+        <div class="subject-block">
+            <p>Математика</p>
+        </div>
+        <div class="subject-block">
+            <p>Анимация</p>
+        </div>
     </div>
 </div>
 {% if user.subscribe_date|date:"Y-m-d" >= user.last_login|date:"Y-m-d" %}
-    <div style="position: relative; top: 170px; left: 225px; height: 1450px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
-        <p style="position: relative; top: 20px; left: 20px; font-size: 20px;">Барлық анимациялар ашық</p>
-    <!--    1-->
-        <a href="{% url 'sabaq61' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 30px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жай бөлшектерге амалдар қолдану</p>
+<div style="display: flex; flex-direction: column; align-items: stretch; background: #f2f2f2; width: 1330px; height: 1550px; margin: 50px auto; border-radius: 20px; padding: 20px;">
+    <p style="font-size: 20px; margin-bottom: 10px;">Барлық анимациялар ашық</p>
+
+    <a href="{% url 'sabaq61' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">1</p>
             </div>
-        </a>
-    <!--    2-->
-        <a href="{% url 'sabaq62' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 40px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Ондық бөлшектер және оларға амалдар қолдану</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Жай бөлшектерге амалдар қолдану</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq62' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">2</p>
             </div>
-        </a>
-    <!--    3-->
-        <a href="{% url 'sabaq63' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 50px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">3</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жиын</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Ондық бөлшектер және оларға амалдар қолдану</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq63' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">3</p>
             </div>
-        </a>
-    <!--    4-->
-        <a href="{% url 'sabaq64' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 60px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">4</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Пайыз</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Жиын</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq64' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">4</p>
             </div>
-        </a>
-    <!--    5-->
-        <a href="{% url 'sabaq65' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 70px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">5</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Диаграмма</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Пайыз</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq65' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">5</p>
             </div>
-        </a>
-    <!--    6-->
-        <a href="{% url 'sabaq66' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 80px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">6</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Екі санның қатынасы. Екі санның пайыздық қатынасы</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Диаграмма</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq66' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">6</p>
             </div>
-        </a>
-    <!--    7-->
-        <a href="{% url 'sabaq67' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 90px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">7</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Пропорция. Пропорцияның негізгі қасиеті</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Екі санның қатынасы. Екі санның пайыздық қатынасы</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq67' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">7</p>
             </div>
-        </a>
-    <!--    8-->
-        <a href="{% url 'sabaq611' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 100px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">8</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Шеңбердің ұзындығы. Дөңгелектің ауданы. Шар. Сфера</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Пропорция. Пропорцияның негізгі қасиеті</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq611' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">8</p>
             </div>
-        </a>
-    <!--    12-->
-        <a href="{% url 'sabaq612' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 110px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">9</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Оң сандар. Теріс сандар. Координаталық түзу. Қарама-қарсы сандар</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Шеңбердің ұзындығы. Дөңгелектің ауданы. Шар. Сфера</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq612' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">9</p>
             </div>
-        </a>
-    <!--    13-->
-        <a href="{% url 'sabaq613' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 120px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">10</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Бүтін сандар. Рационал сандар</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Оң сандар. Теріс сандар. Координаталық түзу. Қарама-қарсы сандар</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq613' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">10</p>
             </div>
-        </a>
-    <!--    14-->
-        <a href="{% url 'sabaq614' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 130px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">11</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Санның модулі</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Бүтін сандар. Рационал сандар</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq614' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">11</p>
             </div>
-        </a>
-    <!--    15-->
-        <a href="{% url 'sabaq615' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 140px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">12</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Рационал сандарды салыстыру</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Санның модулі</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq615' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">12</p>
             </div>
-        </a>
-    <!--    16-->
-        <a href="{% url 'sabaq616' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 150px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">13</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Рационал сандарды координаталық түзудің көмегімен қосу</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Рационал сандарды салыстыру</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq616' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">13</p>
             </div>
-        </a>
-    <!--    17-->
-        <a href="{% url 'sabaq617' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 160px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">14</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Теріс рационал сандарды қосу. Таңбалары әртүрлі рационал сандарды қосу</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Рационал сандарды координаталық түзудің көмегімен қосу</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq617' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">14</p>
             </div>
-        </a>
-    <!--    18-->
-        <a href="{% url 'sabaq621' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 170px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">15</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Рационал сандарды бөлу</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Теріс рационал сандарды қосу. Таңбалары әртүрлі рационал сандарды қосу</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq621' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">15</p>
             </div>
-        </a>
-    <!--    22-->
-        <a href="{% url 'sabaq625' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 180px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">16</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Айнымалы. Айнымалысы бар өрнек</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Рационал сандарды бөлу</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq625' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">16</p>
             </div>
-        </a>
-    </div>
+            <p style="font-size: 28px; color: #000; margin: 0;">Айнымалы. Айнымалысы бар өрнек</p>
+        </div>
+    </a>
+</div>
 {% elif user.subscribe_date|date:"Y-m-d" <= user.last_login|date:"Y-m-d" %}
-    <div style="position: relative; top: 170px; left: 225px; height: 1600px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
-        <p style="position: relative; top: 15px; left: 20px; font-size: 20px;">Тегін сабақ: 2</p>
-    <!--    1-->
-        <a href="{% url 'sabaq61' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 10px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жай бөлшектерге амалдар қолдану</p>
+<div style="display: flex; flex-direction: column; align-items: stretch; background: #f2f2f2; width: 1330px; height: 1800px; margin: 50px auto; border-radius: 20px; padding: 20px;">
+    <p style="font-size: 20px; margin-bottom: 10px;">Тегін сабақ: 2</p>
+
+    <a href="{% url 'sabaq61' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">1</p>
             </div>
-        </a>
-    <!--    12-->
-        <a href="{% url 'sabaq612' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 20px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Оң сандар. Теріс сандар. Координаталық түзу. Қарама-қарсы сандар</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Заттар тобын салыстыру</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq612' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">2</p>
             </div>
-        </a>
-        <p style="position: relative; top: 30px; left: 22px; font-size: 20px;">Ақылы сабақ: 16</p>
-    <!--    1-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 30px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жай бөлшектерге амалдар қолдану</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Фигуралар. Нүкте. Сызықтар</p>
+        </div>
+    </a>
+
+    <p style="font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Ақылы сабақ: 16</p>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">1</p>
             </div>
-        </a>
-    <!--    2-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 40px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Ондық бөлшектер және оларға амалдар қолдану</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Заттарды санау</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">2</p>
             </div>
-        </a>
-    <!--    3-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 50px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">3</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Жиын</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Заттар тобын салыстыру</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">3</p>
             </div>
-        </a>
-    <!--    4-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 60px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">4</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Пайыз</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Қосу және азайту</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">4</p>
             </div>
-        </a>
-    <!--    5-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 70px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">5</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Диаграмма</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">7 санының құрамы</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">5</p>
             </div>
-        </a>
-    <!--    6-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 80px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">6</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Екі санның қатынасы. Екі санның пайыздық қатынасы</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">8 саны және цифры</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">6</p>
             </div>
-        </a>
-    <!--    7-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 90px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">7</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Пропорция. Пропорцияның негізгі қасиеті</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">9 саны және цифры</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">7</p>
             </div>
-        </a>
-    <!--    8-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 100px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">8</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Шеңбердің ұзындығы. Дөңгелектің ауданы. Шар. Сфера</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">10 саны</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">8</p>
             </div>
-        </a>
-    <!--    12-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 110px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">9</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Оң сандар. Теріс сандар. Координаталық түзу. Қарама-қарсы сандар</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">10 көлеміндегі сандарды қосу және азайту</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">9</p>
             </div>
-        </a>
-    <!--    13-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 120px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">10</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Бүтін сандар. Рационал сандар</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Фигуралар. Нүкте. Сызықтар</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">10</p>
             </div>
-        </a>
-    <!--    14-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 130px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">11</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Санның модулі</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Уақыт. Сағатты үйрену</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">11</p>
             </div>
-        </a>
-    <!--    15-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 140px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">12</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Рационал сандарды салыстыру</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Санның модулі</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">12</p>
             </div>
-        </a>
-    <!--    16-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 150px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">13</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Рационал сандарды координаталық түзудің көмегімен қосу</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Рационал сандарды салыстыру</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">13</p>
             </div>
-        </a>
-    <!--    17-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 160px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">14</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Теріс рационал сандарды қосу. Таңбалары әртүрлі рационал сандарды қосу</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Рационал сандарды координаталық түзудің көмегімен қосу</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">14</p>
             </div>
-        </a>
-    <!--    18-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 170px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">15</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Рационал сандарды бөлу</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Теріс рационал сандарды қосу. Таңбалары әртүрлі рационал сандарды қосу</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">15</p>
             </div>
-        </a>
-    <!--    22-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative    ; top: 180px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">16</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Айнымалы. Айнымалысы бар өрнек</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Рационал сандарды бөлу</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">16</p>
             </div>
-        </a>
-    </div>
+            <p style="font-size: 28px; color: #000; margin: 0;">Айнымалы. Айнымалысы бар өрнек</p>
+        </div>
+    </a>
+</div>
 {% endif %}
-<div style="position: relative; top: 250px; background-color: #1226de; width: 100%; height: 200px;">
-    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
-    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
-    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
-    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
-    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
-    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
-    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
-    <div style="position: relative; top: 15px;">
-        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
-        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
-        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
-        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
-        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
-        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+<div class="header-container">
+    <!-- Первая колонка -->
+    <div class="column">
+        <h1 class="header-title">Mathem</h1>
+        <a href="http://wa.me/77083387108" style="text-decoration: none; color: #fff">Разработчик</a>
+        <a href="http://wa.me/77066652841" style="text-decoration: none; color: #fff">Администратор</a>
+    </div>
+
+    <!-- Вторая колонка -->
+    <div class="nav-links">
+        <a href="{% url '1' %}">Басты бет</a>
+        <a href="{% url 'synyptar' %}">Анимация</a>
+        <a href="{% url 'quiz' %}">Квиз ойындары</a>
+        <a href="{% url 'onlinetaq' %}">Онлайн тақталар</a>
+    </div>
+
+    <!-- Третья колонка -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==">
+            <img src="{% static 'main/img/instagram.png' %}" alt="Instagram">
+            mathem.2017
+        </a>
+        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1">
+            <img src="{% static 'main/img/tiktok.png' %}" alt="TikTok" style="width: 45px;">
+            mathem.kz
+        </a>
+        <a href="https://t.me/kzmathemkz">
+            <img src="{% static 'main/img/telegram.png' %}" alt="Telegram" style="width: 35px;">
+            mathem.chat
+        </a>
     </div>
 </div>
 {% endblock %}
