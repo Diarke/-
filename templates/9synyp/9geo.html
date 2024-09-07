@@ -5,140 +5,208 @@
 
 {% block content %}
 <style>
-    .mainmenu1 {
-        position: relative;
-        height: 70px;
-        width: 1450px;
-        background: #ffffff;
-        -moz-box-shadow: 0 0 2px #1226de;
-        -webkit-box-shadow: 0 0 2px #1226de;
-        box-shadow: 0 0 2px #1226de;
-        border-radius: 10px 10px 10px 10px;
-    }
-    .mainmenu2 {
-        position: relative;
-        height: 70px;
-        width: 1450px;
-        background: #ffffff;
-        -moz-box-shadow: 0 0 2px #7d7d7d;
-        -webkit-box-shadow: 0 0 2px #7d7d7d;
-        box-shadow: 0 0 2px #7d7d7d;
-        border-radius: 10px 10px 10px 10px;
-    }
+        /* Основной контейнер */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрирование по горизонтали */
+            justify-content: center; /* Центрирование по вертикали */
+            background-color: #1226de;
+            width: 1500px;
+            height: 150px;
+            border-radius: 20px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        /* Заголовок */
+        .title {
+            color: #ffffff;
+            font-size: 36px; /* Увеличенный размер заголовка */
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Контейнер для элементов в строке */
+        .items-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Отступ между элементами */
+            margin-top: 20px;
+        }
+
+        /* Блоки с названием предметов */
+        .subject-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            color: blue;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 2px #ccc;
+            height: 35px;
+            width: auto; /* Дает возможность блокам растягиваться по содержимому */
+        }
+
+        .subject-block p {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .mainmenu1 {
+            position: relative;
+            height: 70px;
+            width: 1450px;
+            background: #ffffff;
+            -moz-box-shadow: 0 0 2px #1226de;
+            -webkit-box-shadow: 0 0 2px #1226de;
+            box-shadow: 0 0 2px #1226de;
+            border-radius: 10px 10px 10px 10px;
+        }
+        .mainmenu2 {
+            position: relative;
+            height: 70px;
+            width: 1450px;
+            background: #ffffff;
+            -moz-box-shadow: 0 0 2px #7d7d7d;
+            -webkit-box-shadow: 0 0 2px #7d7d7d;
+            box-shadow: 0 0 2px #7d7d7d;
+            border-radius: 10px 10px 10px 10px;
+        }
 </style>
-<div style="position: relative; width: 1500px; height: 150px; top: 140px; left: 225px; background-color: #1226de; border-radius: 20px 20px 20px 20px;">
-    <h1 style="position: absolute; top: 20px; left: 700px; color: #ffffff;">9 - сынып</h1>
-    <div class="dropdown" style="position: relative; top: 50px; left: 20px; list-style: none;">
-        <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
-        <div class="dropdown-content">
-            <a href="{% url '9' %}"><li>Алгебра</li></a>
-            <a href="{% url '9geo' %}"><li>Геометрия</li></a>
+<div class="container">
+    <h1 class="title">9 - сынып</h1>
+    <div class="items-container">
+        <div class="dropdown">
+            <button class="dropbtn" style="background-color: #1226de; color: #ffffff">Пәндер</button>
+            <div class="dropdown-content">
+                <a href="{% url '9' %}"><li>Алгебра</li></a>
+                <a href="{% url '9geo' %}"><li>Геометрия</li></a>
+            </div>
         </div>
-    </div>
-    <div style="position: relative; width: 140px; height: 35px; background-color: #ffffff; top: 7px; left: 190px; border-radius: 10px 10px 10px 10px;">
-        <p style="position: relative; top: 2px; left: 20px; font-size: 20px; color: blue">Геометрия</p>
-    </div>
-    <div style="position: relative; width: 125px; height: 35px; background-color: #ffffff; top: -28px; left: 390px; border-radius: 10px 10px 10px 10px;">
-        <p style="position: relative; top: 2px; left: 15px; font-size: 20px; color: blue; text-decoration: none;">Анимация</p>
+        <div class="subject-block">
+            <p>Геометрия</p>
+        </div>
+        <div class="subject-block">
+            <p>Анимация</p>
+        </div>
     </div>
 </div>
 {% if user.subscribe_date|date:"Y-m-d" >= user.last_login|date:"Y-m-d" %}
-    <div style="position: relative; top: 170px; left: 225px; height: 440px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
-        <p style="position: relative; top: 20px; left: 20px; font-size: 20px;">Барлық анимациялар ашық</p>
-    <!--    1-->
-        <a href="{% url 'sabaq91geo' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 30px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Вектор. Векторларға амалдар қолдану. Коллинеар және коллинеар емес векторлар</p>
+<div style="display: flex; flex-direction: column; align-items: stretch; background: #f2f2f2; width: 1330px; height: 400px; margin: 50px auto; border-radius: 20px; padding: 20px;">
+    <p style="font-size: 20px; margin-bottom: 10px;">Барлық анимациялар ашық</p>
+
+    <a href="{% url 'sabaq91geo' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">1</p>
             </div>
-        </a>
-    <!--    2-->
-        <a href="{% url 'sabaq92geo' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 40px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Вектордың координаталары. Координаталық түрде берілген векторларға амалдар қолдану</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Вектор. Векторларға амалдар қолдану. Коллинеар және коллинеар емес векторлар</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq92geo' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">2</p>
             </div>
-        </a>
-    <!--    3-->
-        <a href="{% url 'sabaq94geo' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 50px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">3</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Ұқсас фигуралар және олардың қасиеттері. Үшбұрыштар ұқсастығының белгілері</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Вектордың координаталары. Координаталық түрде берілген векторларға амалдар қолдану</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq94geo' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">3</p>
             </div>
-        </a>
-    </div>
+            <p style="font-size: 28px; color: #000; margin: 0;">Ұқсас фигуралар және олардың қасиеттері. Үшбұрыштар ұқсастығының белгілері</p>
+        </div>
+    </a>
+</div>
 {% elif user.subscribe_date|date:"Y-m-d" <= user.last_login|date:"Y-m-d" %}
-    <div style="position: relative; top: 170px; left: 225px; height: 550px; width: 1500px; background: #f2f2f2; border-radius: 20px 20px 20px 20px;">
-        <p style="position: relative; top: 15px; left: 20px; font-size: 20px;">Тегін сабақ: 2</p>
-    <!--    1-->
-        <a href="{% url 'sabaq91geo' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 10px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Вектор. Векторларға амалдар қолдану. Коллинеар және коллинеар емес векторлар</p>
+<div style="display: flex; flex-direction: column; align-items: stretch; background: #f2f2f2; width: 1330px; height: 630px; margin: 50px auto; border-radius: 20px; padding: 20px;">
+    <p style="font-size: 20px; margin-bottom: 10px;">Тегін сабақ: 2</p>
+
+    <a href="{% url 'sabaq91geo' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">1</p>
             </div>
-        </a>
-    <!--    2-->
-        <a href="{% url 'sabaq92geo' %}" style="text-decoration: none;">
-            <div class="mainmenu1" style="position: relative; top: 20px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Вектордың координаталары. Координаталық түрде берілген векторларға амалдар қолдану</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Вектор. Векторларға амалдар қолдану. Коллинеар және коллинеар емес векторлар</p>
+        </div>
+    </a>
+
+    <a href="{% url 'sabaq92geo' %}" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu1" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #1226de; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">2</p>
             </div>
-        </a>
-        <p style="position: relative; top: 30px; left: 20px; font-size: 20px;">Ақылы сабақ: 3</p>
-    <!--    1-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 30px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">1</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Вектор. Векторларға амалдар қолдану. Коллинеар және коллинеар емес векторлар</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Вектордың координаталары. Координаталық түрде берілген векторларға амалдар қолдану</p>
+        </div>
+    </a>
+
+    <p style="font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Ақылы сабақ: 3</p>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">1</p>
             </div>
-        </a>
-    <!--    2-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 40px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">2</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Вектордың координаталары. Координаталық түрде берілген векторларға амалдар қолдану</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Вектор. Векторларға амалдар қолдану. Коллинеар және коллинеар емес векторлар</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">2</p>
             </div>
-        </a>
-    <!--    3-->
-        <a href="#" style="text-decoration: none;">
-            <div class="mainmenu2" style="position: relative; top: 50px; left: 20px;">
-                <div style="position: relative; top: 10px; left: 10px; width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; text-align: center;">
-                    <p style="position: relative; top: 5px; font-size: 28px; color: #fff;">3</p>
-                </div>
-                <p style="position: relative; top: -35px; left: 80px; color: #000; font-size: 28px;">Ұқсас фигуралар және олардың қасиеттері. Үшбұрыштар ұқсастығының белгілері</p>
+            <p style="font-size: 28px; color: #000; margin: 0;">Вектордың координаталары. Координаталық түрде берілген векторларға амалдар қолдану</p>
+        </div>
+    </a>
+
+    <a href="#" style="text-decoration: none; margin-bottom: 20px;">
+        <div class="mainmenu2" style="display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; box-shadow: 0 0 5px #ccc; padding: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background-color: #7d7d7d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 28px; color: #fff; margin: 0;">3</p>
             </div>
-        </a>
-    </div>
+            <p style="font-size: 28px; color: #000; margin: 0;">Ұқсас фигуралар және олардың қасиеттері. Үшбұрыштар ұқсастығының белгілері</p>
+        </div>
+    </a>
+</div>
 {% endif %}
-<div style="position: relative; top: 250px; background-color: #1226de; width: 100%; height: 200px;">
-    <h1 style="position: absolute; top: 20px; left: 420px; color: white; font-weight: bold; font-size: 46px;">Mathem</h1>
-    <a href="http://wa.me/77083387108" style="position: absolute; top: 80px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Разработчик</a>
-    <a href="http://wa.me/77066652841" style="position: absolute; top: 115px; left: 422px; color: white; text-decoration: none; font-size: 20px;">Администратор</a>
-    <a href="{% url 'quiz' %}" style="position: absolute; left: 930px; top: 60px; text-decoration: none; color: #fff; font-size: 20px;">Квиз ойындары</a>
-    <a href="{% url 'onlinetaq' %}" style="position: absolute; left: 930px; top: 126px; text-decoration: none; color: #fff; font-size: 20px;">Онлайн тақталар</a>
-    <a href="{% url '1' %}" style="position: absolute; left: 930px; top: 27px; text-decoration: none; color: #fff; font-size: 20px;">Басты бет</a>
-    <a href="{% url 'synyptar' %}" style="position: absolute; left: 930px; top: 93px; text-decoration: none; color: #fff; font-size: 20px;">Анимация</a>
-    <div style="position: relative; top: 15px;">
-        <img src="{% static 'main/img/instagram.png' %}" alt="inst" style="width: 30px; position: absolute; top: 18px; left: 1360px;">
-        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==" style="position: relative; top: 15px; left: 1400px; text-decoration: none; color: #fff; font-size: 21px;">mathem.2017</a>
-        <img src="{% static 'main/img/tiktok.png' %}" alt="tt" style="width: 45px; position: absolute; top: 55px; left: 1352px;">
-        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1" style="position: relative; top: 59px; left: 1270px; text-decoration: none; color: #fff; font-size: 21px;">mathem.kz</a>
-        <img src="{% static 'main/img/telegram.png' %}" alt="tt" style="width: 38px; position: absolute; top: 100px; left: 1357px;">
-        <a href="https://t.me/kzmathemkz" style="position: relative; top: 101px; left: 1165px; text-decoration: none; color: #fff; font-size: 21px;">mathem.chat</a>
+<div class="header-container">
+    <!-- Первая колонка -->
+    <div class="column">
+        <h1 class="header-title">Mathem</h1>
+        <a href="http://wa.me/77083387108" style="text-decoration: none; color: #fff">Разработчик</a>
+        <a href="http://wa.me/77066652841" style="text-decoration: none; color: #fff">Администратор</a>
+    </div>
+
+    <!-- Вторая колонка -->
+    <div class="nav-links">
+        <a href="{% url '1' %}">Басты бет</a>
+        <a href="{% url 'synyptar' %}">Анимация</a>
+        <a href="{% url 'quiz' %}">Квиз ойындары</a>
+        <a href="{% url 'onlinetaq' %}">Онлайн тақталар</a>
+    </div>
+
+    <!-- Третья колонка -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/mathem.2017?igsh=MTI3Z2p2YzM4NjdsMA==">
+            <img src="{% static 'main/img/instagram.png' %}" alt="Instagram">
+            mathem.2017
+        </a>
+        <a href="https://www.tiktok.com/@mathematics_platform?_t=8pFsiXsJ79K&_r=1">
+            <img src="{% static 'main/img/tiktok.png' %}" alt="TikTok" style="width: 45px;">
+            mathem.kz
+        </a>
+        <a href="https://t.me/kzmathemkz">
+            <img src="{% static 'main/img/telegram.png' %}" alt="Telegram" style="width: 35px;">
+            mathem.chat
+        </a>
     </div>
 </div>
 {% endblock %}
